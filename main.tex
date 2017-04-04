@@ -1,0 +1,133 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% nobib: Don't load natbib with the tufte-book class, since we use biblatex instead.
+\documentclass[justified,nobib]{tufte-book}
+\morefloats
+\usepackage{lgrind}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{moreverb}
+\usepackage{alltt}
+\usepackage{url}
+\usepackage{array}
+\usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\usepackage{enumitem}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\usepackage{fancyvrb}
+
+% Use biblatex to allow for customization of citation vs. bibliography styles
+% and use of \autocite puts the citation in the margin for Tufte classes.
+% See also:
+% - http://tex.stackexchange.com/questions/45934/can-i-use-biblatex-with-tufte-classes
+% - http://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
+\usepackage[
+  firstinits=true,
+  citestyle=authortitle-ibid,
+  bibstyle=authoryear,
+  autocite=footnote,
+  citetracker=true,
+  citereset=chapter,
+  backend=bibtex,
+  isbn=false,
+  url=false
+]{biblatex}
+\addbibresource{/Users/powerpak/share/library.bib}
+% Add a command to do a sidenote citation but with an adjustable Y offset.
+\newcommand{\sidecite}[2][]{\ifthenelse{\equal{#1}{}}{\autocite{#2}}{\sidenote[][#1]{\cite{#2}}}}
+
+% Further hacks to the biblatex style. (1) get rid of "In:" in the bibliography
+\renewbibmacro{in:}{}
+% Display all names (not just the first) in last-first order
+\DeclareNameAlias{sortname}{last-first}
+
+\usepackage{xpatch}
+% Patch the citation formatting macros for authortitle-ibid to include a year.
+% Also, if the citation was already seen in the same chapter, no need to repeat the title.
+\xpatchbibmacro{cite}{\usebibmacro{cite:title}}{
+  \addspace%
+  \ifciteseen{\mkbibparens{\printtext[bibhyperref]{\printdate}}}{%
+    \mkbibparens{\printdate}%
+    \addcomma\addspace%
+    \usebibmacro{cite:title}}}{}{}
+\xpatchbibmacro{cite}{\setunit{\nametitledelim}}{}{}{}
+
+% Customize link colors. These are standard dvips or svgnames color names.
+% More colors at https://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips
+%   and http://www.latextemplates.com/svgnames-colors
+\definecolor{AccentColor}{RGB}{0,77,128} % used for the title page
+\hypersetup{%
+  colorlinks = true,
+  citecolor = Maroon,
+  linkcolor = Maroon,
+  urlcolor = Maroon
+}
+
+% XeTeX action to use Minion Pro as the main font
+\usepackage[protrusion=true,final]{microtype}
+\ifxetex
+  \usepackage{fontspec}
+  % The following line converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+  \defaultfontfeatures{Mapping=tex-text}
+  \setromanfont[Ligatures={Common}]{Minion Pro}
+  \setmonofont[Scale=0.8]{Bitstream Vera Sans Mono} 
+  \setsansfont[Scale=0.9]{Optima Regular}
+  \setmainfont{Minion Pro}
+  \newcommand{\textlsp}[2][5]{%
+    \begingroup\addfontfeatures{LetterSpace=#1}#2\endgroup
+  }
+  \newcommand{\oldstylenumbers}[1]{
+    \begingroup\addfontfeatures{Numbers={Proportional,OldStyle}}#1\endgroup
+  }
+  \renewcommand{\allcapsspacing}[1]{\textlsp[15]{#1}}
+  \renewcommand{\smallcapsspacing}[1]{\textlsp[8]{#1}}
+  \renewcommand{\allcaps}[1]{\textls[15]{\MakeTextUppercase{#1}}}
+  \renewcommand{\smallcaps}[1]{\smallcapsspacing{\scshape\MakeTextLowercase{#1}}}
+  \renewcommand{\textsc}[1]{\smallcapsspacing{\textsmallcaps{#1}}}
+\fi
+
+% Prints argument within hanging parentheses (i.e., parentheses that take
+% up no horizontal space).  Useful in tabular environments.
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+
+% Prints an asterisk that takes up no horizontal space.
+% Useful in tabular environments.
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+
+% Prints a trailing space in a smart way.
+\usepackage{xspace}
+
+% Look for all graphics in this directory.
+\graphicspath {{figs/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Finally, begin the document proper and include all the other parts.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter
+\include{cover}
+\include{contents}
+
+%%
+% We can set the line spacing for the main matter of the document using the toggles below.
+% Note that after we do this, we then have to fix spacing between \marginpar's.
+\mainmatter
+%\doublespacing
+\onehalfspacing
+\setlength\marginparpush{12pt}
+\include{chap/chap1}
+\include{chap/chap2}
+\include{chap/chap3}
+
+\appendix
+\include{appa}
+\include{biblio}
+
+\end{document}

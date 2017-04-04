@@ -34,7 +34,7 @@ Depth of coverage reported in Table 1 was calculated by SMRTanalysis (version 2.
 
 \subsection{Accession numbers}
 
-Sequences and annotations for reference assemblies of clinical \emph{S. maltophilia} isolates K279a, R551-3, D457, and JV3 were obtained from GenBank/RefSeq at accession numbers \texttt{AM743169.1}, \texttt{NC\_011071.1}, \texttt{NC\_017671.1}, and \texttt{NC\_015947.1}, respectively. These represent the entirety of assemblies for S. maltophilia found in NCBI Assembly with an Assembly Level of “Complete Genome” (\url{http://www.ncbi.nlm.nih.gov/assembly/organism/40324/all/}) at the time of the study.\footnote{In 2017, excepting the genomes submitted as a result of this study, only one more complete genome (\href{ASM202560v1}{https://www.ncbi.nlm.nih.gov/assembly/GCF\_002025605.1/}) has been added.} K279a and D457 were isolated from human infections, while R551-3 and JV3 were isolated from plants. Previously published sequences for the quinolone-resistance determining region (QRDR) of the \emph{gyrA}, \emph{gyrB}, \emph{parC} and \emph{parE} genes in \emph{S. maltophilia}\autocite{Valdezate2002} were obtained from EMBL/European Nucleotide Archive.
+Sequences and annotations for reference assemblies of clinical \emph{S. maltophilia} isolates K279a, R551-3, D457, and JV3 were obtained from GenBank/RefSeq at accession numbers \texttt{AM743169.1}, \texttt{NC\_011071.1}, \texttt{NC\_017671.1}, and \texttt{NC\_015947.1}, respectively. These represent the entirety of assemblies for S. maltophilia found in NCBI Assembly with an Assembly Level of “Complete Genome” (\url{http://www.ncbi.nlm.nih.gov/assembly/organism/40324/all/}) at the time of the study.\footnote{By 2017, excepting the three assemblies submitted as a result of this study, only one more complete genome (\href{https://www.ncbi.nlm.nih.gov/assembly/GCF\_002025605.1/}{ASM202560v1}) is available.} K279a and D457 were isolated from human infections, while R551-3 and JV3 were isolated from plants. Previously published sequences for the quinolone-resistance determining region (QRDR) of the \emph{gyrA}, \emph{gyrB}, \emph{parC} and \emph{parE} genes in \emph{S. maltophilia}\autocite{Valdezate2002} were obtained from EMBL/European Nucleotide Archive.
 
 Complete genome sequences for ISMMS2, ISMMS2R, and ISMMS3 were deposited in GenBank at accession numbers \texttt{CP011305}, \texttt{CP011306}, and \texttt{CP011010}, respectively. Deposited sequences for ISMMS2 and ISMMS2R incorporate the Sanger corrected regions described above. Sequences for ISMMS4, ISMMS5, ISMMS6, and ISMMS7 were deposited as Whole Genome Shotgun projects at DDBJ/EMBL/GenBank under the accessions \texttt{JZIU00000000}, \texttt{JZIV00000000}, \texttt{JZIW00000000}, and \texttt{JZTX00000000}, respectively, with the versions described in this chapter at \texttt{JZIU01000000}, \texttt{JZIV01000000}, \texttt{JZIW01000000}, and \texttt{JZTX01000000}, respectively.
 
@@ -50,23 +50,102 @@ For each isolate, initial DNA modification motifs were first predicted by a de n
 
 \section{Results}
 
-Two complete whole genome sequences were derived from Patient 1’s isolates before and after the change in levofloxacin MIC and compared to whole genome sequences of five control S. maltophilia isolates (Patients 2-6). All sequences were \emph{de novo} assembled, i.e., without regard to reference assemblies. Table 1 summarizes the relative dates of collection, antimicrobial susceptibility results, and assembly statistics.
+Two complete whole genome sequences were derived from Patient 1’s isolates before and after the change in levofloxacin MIC and compared to whole genome sequences of five control S. maltophilia isolates (Patients 2-6). All sequences were \emph{de novo} assembled, i.e., without regard to reference assemblies. Table \ref{tab:steno_pts} summarizes the relative dates of collection, antimicrobial susceptibility results, and assembly statistics.
+
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{P}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\begin{table*}[ht]
+  \centering
+  \small
+  \begin{flushleft}
+  \begin{tabular}{l P{1.5cm} P{1.5cm} l l l l P{2.5cm} P{1.5cm}}
+    \toprule
+    \multirow{2}{*}{Patient} & 
+    \multirow{2}{1.5cm}{Time of collection (days)$^a$} &
+    \multirow{2}{1.5cm}{Isolate name} &
+    \multicolumn{2}{P{3cm}}{Levo susceptibility (MIC, mg/L)} &
+    \multicolumn{2}{P{3cm}}{SXT susceptibility (MIC, mg/L)} &
+    \multirow{2}{2.5cm}{Assembly quality} &
+    \multirow{2}{1.5cm}{Depth of coverage}
+    \\
+    \cmidrule(r){4-5}\cmidrule(r){6-7}
+    & & & Vitek2 & Etest & Vitek2 & Etest & &
+    \\
+    \midrule
+    1  &  0   & ISMMS2  &  S (0.5)$^b$ &  S (1)     & S (<20)      & S (0.19) & 1 circular 4.51Mbp chromosome & 160x \\
+    1  &  +10 & ISMMS2R &  R (>32)$^b$ &  R (16)    & S (1)        & S (0.38) & 1 circular 4.51Mbp chromosome & 403x \\
+    2  &  -26 & ISMMS3  &  S (0.25)  &  S (0.38)  & U (80, <20)$^c$ & S (0.75) & 1 circular 4.80Mbp chromosome & 153x \\
+    3  &  +14 & ISMMS4  &  R (>8)    &  R (>12)   & U (0.5, 80)$^c$ & S (0.75) & 3 contigs (4.73Mbp, 6.5kbp, 11.2kbp) & 303x \\
+    4  &  -32 & ISMMS5  &  S (1)     &  S (1)     & S (<20)      & S (0.25) & 18 contigs & 270x\\
+    5  &  0   & ISMMS6  &  S (<0.12) &  S (0.125) & S (<20)      & S (1.5)  & 10 contigs & 262x\\
+    6  &  +2  & ISMMS7  &  S (1)     &  S (0.75)  & S (<20)      & S (1.5)  & 1 circular 4.69Mbp chromosome, 1 additional 17.7kbp contig & 318x\\
+    \bottomrule
+  \end{tabular}
+  \end{flushleft}
+  \caption[Sequenced clinical isolates and their antimicrobial susceptibilities]{Sequenced clinical isolates and their antimicrobial susceptibilities. Abbreviations: Levo, levofloxacin; SXT, trimethoprim/sulfamethoxazole; S, susceptible; R, resistant; U, undetermined; Mbp, million base pairs; kbp, thousand base pairs. $^a$Time of collection was defined in days relative to the date of collecting the initial S. maltophilia isolate in the case patient. $^b$This is the change in levofloxacin susceptibility investigated in this study. $^c$Inconsistent results were obtained in replicate.}
+  \label{tab:steno_pts}
+\end{table*}
 
 \subsection{Emergence of a point mutation conferring quinolone resistance}
 
-Assembled genome sequences for Patient 1’s isolates before (ISMMS2) and after (ISMMS2R) observation of levofloxacin resistance were compared directly and were identical except for one single-nucleotide variant (SNV) and five one-base indels. Sanger sequencing confirmed the presence of the SNV, but identified the indels as homopolymer assembly errors. Coding domain sequence predictions for the surrounding locus (Figure 1A) revealed that the SNV was inside \emph{smeT}, a \emph{tetR}-like repressor upstream of the structural operon for the \emph{smeDEF} genes, which encode a multidrug efflux pump. The SNV is an A>T substitution at position 497 of \emph{smeT} causing a nonsynonymous Leu-166→Gln mutation.
+Assembled genome sequences for Patient 1’s isolates before (ISMMS2) and after (ISMMS2R) observation of levofloxacin resistance were compared directly and were identical except for one single-nucleotide variant (SNV) and five one-base indels. Sanger sequencing confirmed the presence of the SNV, but identified the indels as homopolymer assembly errors. Coding domain sequence predictions for the surrounding locus (Figure \ref{fig:snp_location}A) revealed that the SNV was inside \emph{smeT}, a \emph{tetR}-like repressor upstream of the structural operon for the \emph{smeDEF} genes, which encode a multidrug efflux pump. The SNV is an A>T substitution at position 497 of \emph{smeT} causing a nonsynonymous Leu-166→Gln mutation.
 
-The same nonsynonymous mutation has been previously observed in an in vitro strain of \emph{S. maltophilia}, D457R, created by selecting single-step tetracycline-resistant mutants from the antibiotic-susceptible clinical strain D457 \autocite{Alonso1997,Sanchez2002}. The mutation is in the eighth α-helix of the \emph{smeT} protein \autocite{Hernandez2009}, which homodimerizes to repress transcription of the \emph{smeDEF} operon \autocite{Hernandez2009,Sanchez2002}. Although the mutation is not in the DNA-binding region, it has been shown to disable the repressor activity of SmeT \autocite{Sanchez2002}, leading to upregulation of \emph{SmeDEF} and conferring an MDR phenotype \autocite{Alonso2001}.
+\begin{figure*}[tbp]
+  \includegraphics[width=\textwidth]{chap2/snp_location}
+  \fullwidthlabelcaption{fig:snp_location}{SNVs observed in quinolone-resistant \emph{S. maltophilia} clinical isolates.}{
+    \textbf{Single-nucleotide variants (SNVs) observed in quinolone-resistant \emph{S. maltophilia} clinical isolates.} A, assembled circular chromosome for ISMMS2, including predicted coding domain sequence (CDS) and noncoding RNA (ncRNA) features drawn with ChromoZoom. Horizontal position corresponds to base pair location. The \emph{smeDEF} operon is shown in the detail callout, which highlights both the \emph{smeT} c.497T>A SNV that emerged in ISMMS2R and the aligned location of the \emph{smeT} c.388C>T SNV (encoding a premature stop codon) in ISMMS4. ISMMS2 and ISMMS2R are serial isolates from a single patient before and after development of quinolone resistance, while ISMMS4 was quinolone-resistant at initial isolation from a different patient. B, multiple sequence alignment of part of the predicted \emph{smeT} product in each of the clinical isolates, the D457 reference assembly, and its quinolone resistant counterpart D457R. Predicted α-helices are labeled as grey bars below the sequence. Positions identical in all sequences are shaded with a dark gray background, equivalent substitutions are typeset in red, and non-equivalent substitutions are typeset in boldface black. The L166Q and Q130* (*, stop codon) polymorphisms are highlighted.
+  }
+\end{figure*}
 
-Figure 1B shows an amino-acid sequence alignment comparing \emph{SmeT} in D457 and D457R to aligned sequences from our seven isolates. Notably, while none of the remaining isolates shared the same Leu-166→Gln (c.497A>T) mutation, another isolate resistant to levofloxacin, ISMMS4, displayed a C>T mutation at position 388 of \emph{smeT} that creates a premature stop codon that likely disrupts \emph{smeT} function (Figure 1A and 1B). 
+The same nonsynonymous mutation has been previously observed in an in vitro strain of \emph{S. maltophilia}, D457R, created by selecting single-step tetracycline-resistant mutants from the antibiotic-susceptible clinical strain D457 \autocite{Alonso1997,Sanchez2002}. The mutation is in the eighth α-helix of the \emph{smeT} protein \autocite{Hernandez2009}, which homodimerizes to repress transcription of the \emph{smeDEF} operon \autocite{Hernandez2009,Sanchez2002}. Although the mutation is not in the DNA-binding region, it has been shown to disable the repressor activity of \emph{SmeT},\autocite{Sanchez2002} leading to upregulation of \emph{SmeDEF} and conferring an MDR phenotype \autocite{Alonso2001}.
 
-The QRDR are loci within genes encoding topoisomerase II and IV subunits known for mutations that confer quinolone resistance in Gram-negative bacteria, although they appear to play a secondary role to efflux systems for resistance emerging during treatment of \emph{S. maltophilia} infection.\autocite{Valdezate2005} An amino-acid sequence alignment of the \emph{gyrA}, \emph{gyrB}, and \emph{parC} genes of our seven isolates and the reference clinical isolates D457 and K279a revealed no differences in the QRDR. Some variants were observed within the QRDR of \emph{parE} (Supplementary Figure 1), all of which were consistent with past observations in clinical isolates \autocite{Valdezate2002} except for an Ile-599→Val variant observed in three of our isolates and the D457 reference sequence.
+Figure \ref{fig:snp_location}B shows an amino-acid sequence alignment comparing \emph{SmeT} in D457 and D457R to aligned sequences from our seven isolates. Notably, while none of the remaining isolates shared the same Leu-166→Gln (c.497A>T) mutation, another isolate resistant to levofloxacin, ISMMS4, displayed a C>T mutation at position 388 of \emph{smeT} that creates a premature stop codon that likely disrupts \emph{smeT} function (Figure \ref{fig:snp_location}A and \ref{fig:snp_location}B).
+
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{chap2/qrdr_locus}               
+  \caption[Amino-acid sequence alignment for the quinolone-resistance determining region (QRDR) of the \emph{parE} gene]{Amino-acid sequence alignment for the quinolone-resistance determining region (QRDR) of the \emph{parE} gene for seven S. maltophilia clinical isolates (ISMMS2 through 7 and ISMMS2R) and two reference assemblies of clinical isolates obtained from GenBank.}
+  \label{fig:qrdr_locus}
+\end{figure}
+ 
+The QRDR are loci within genes encoding topoisomerase II and IV subunits known for mutations that confer quinolone resistance in Gram-negative bacteria, although they appear to play a secondary role to efflux systems for resistance emerging during treatment of \emph{S. maltophilia} infection.\autocite{Valdezate2005} An amino-acid sequence alignment of the \emph{gyrA}, \emph{gyrB}, and \emph{parC} genes of our seven isolates and the reference clinical isolates D457 and K279a revealed no differences in the QRDR. Some variants were observed within the QRDR of \emph{parE} (Figure \ref{fig:qrdr_locus}), all of which were consistent with past observations in clinical isolates \autocite{Valdezate2002} except for an Ile-599→Val variant observed in three of our isolates and the D457 reference sequence.
 
 \subsection{Diverse sources of \emph{S. maltophilia} identified with WGS}
 
-Significant genomic diversity was observed among the \emph{S. maltophilia} isolates from all six patients. Supplementary Figure 2 shows a maximum-likelihood phylogeny with branch lengths scaled to SNV distances. Our isolates distribute widely among all four reference assemblies for complete \emph{S. maltophilia} genomes in GenBank. The distances of tens of thousands of SNVs seen in our phylogeny suggest that the natural diversity of pathogenic \emph{S. maltophilia} is greater than that captured by the current set of reference assemblies, even within a single hospital setting. 
+Significant genomic diversity was observed among the \emph{S. maltophilia} isolates from all six patients. Figure \ref{fig:steno_phylo} shows a maximum-likelihood phylogeny with branch lengths scaled to SNV distances. Our isolates distribute widely among all four reference assemblies for complete \emph{S. maltophilia} genomes in GenBank. The distances of tens of thousands of SNVs seen in our phylogeny suggest that the natural diversity of pathogenic \emph{S. maltophilia} is greater than that captured by the current set of reference assemblies, even within a single hospital setting. 
 
-Recombination is not an obvious source of diversity in our \emph{S. maltophilia} isolates. Supplementary Figure 3 depicts whole genome alignments between the four clinical isolates where assembly produced a circularized chromosome and the four GenBank references, showing small areas of non-homology separating large regions of significant homology occurring generally in the same order for each genome. ISMMS2 and ISMMS2R are structurally identical, as expected for serial isolates, while recombination events among other strains are limited to small 1-2kb segments. Epigenetics motif analysis also suggests that the isolates are not related. Supplementary Table 1 shows different motifs in isolates from separate patients, implicating differences in type II \& III restriction modification systems between the isolates more likely to be caused by inter-strain/species horizontal transfer of methyltransferases than by intra-strain mutations.\autocite{Srikhanta2010} Together, this demonstrates that transmission did not occur among these six cases and that whole-genome sequencing can comprehensively capture genetic distances and structural variants among diverse clinical isolates of \emph{S. maltophilia}.
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{chap2/phylogram}               
+  \caption[Phylogeny of seven \emph{S. maltophilia} clinical isolates]{Phylogeny of seven \emph{S. maltophilia} clinical isolates (ISMMS2 through 7 and ISMMS2R) and four reference assemblies obtained from GenBank. Trees were constructed by inferring ancestral states using RAxML-8.0.2; branch lengths correspond to single-nucleotide polymorphism (SNP) distances from branch points, and are drawn using R version 3.0.3 and the APE library version 3.1-1. The core genome did not contain the \emph{smeT} locus; therefore, the SNV differentiating ISSMS2 and ISMMSR is not observed in this tree.}
+  \label{fig:steno_phylo}
+\end{figure}
+
+\begin{figure}[htb]
+  \includegraphics[width=\textwidth]{chap2/mauve_structural_variation}               
+  \caption[Genome-scale comparison of four clinical isolates and four reference assemblies]{Genome-scale comparison of four fully assembled \emph{S. maltophilia} clinical isolates and four reference assemblies obtained from GenBank. Mauve 2.4.0 was used to plot locally collinear blocks (LCBs; conserved segments that appear to be internally free from genome rearrangements) as colored rectangles, with gaps representing non-homologous regions. Vertical bars inside each LCB rectangle show the average level of conservation at that region of the genomic sequence. Colored lines connect homologous LCBs among the genomes, and LCBs plotted below the centerline are in the reverse complement orientation relative to the ISMMS2 sequence. At top, sequences for the isolates from before and after development of quinolone resistance (ISSMS2 and ISSMS2R) in the case patient have identical structures.}
+  \label{fig:mauve}
+\end{figure}
+
+Recombination is not an obvious source of diversity in our \emph{S. maltophilia} isolates. Figure \ref{fig:mauve} depicts whole genome alignments between the four clinical isolates where assembly produced a circularized chromosome and the four GenBank references, showing small areas of non-homology separating large regions of significant homology occurring generally in the same order for each genome. ISMMS2 and ISMMS2R are structurally identical, as expected for serial isolates, while recombination events among other strains are limited to small 1-2kb segments. Epigenetics motif analysis also suggests that the isolates are not related. Table \ref{tab:steno_epimotifs} shows different motifs in isolates from separate patients, implicating differences in type II \& III restriction modification systems between the isolates more likely to be caused by inter-strain/species horizontal transfer of methyltransferases than by intra-strain mutations.\autocite{Srikhanta2010} Together, this demonstrates that transmission did not occur among these six cases and that whole-genome sequencing can comprehensively capture genetic distances and structural variants among diverse clinical isolates of \emph{S. maltophilia}.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l l}
+    \toprule
+    Isolate name & Epigenetic motifs \\
+    \midrule
+    ISMMS2   & AGT\underline{A}CT \\
+    ISMMS2R  & AGT\underline{A}CT \\
+    ISMMS3   & None \\
+    ISMMS4   & CAG\underline{A}G \\
+    ISMMS5   & CTGG\underline{A}C, CACAN\underline{A}G \\
+    ISMMS6   & CAAC\underline{A}C, CTG\underline{A}TG, CAACG\underline{A}C \\
+    ISMMS7   & CAG\underline{A}G \\
+    \bottomrule
+  \end{tabular}
+  \caption[Epigenetic motifs for clinical isolates of S. maltophilia]{Diverse epigenetic motifs, representing putative target sequences for each strain’s DNA methyltransferase enzymes, discovered for clinical isolates of \emph{S. maltophilia}.  Isolates are named as in Table \ref{tab:steno_pts}. The underlined A’s correspond to putative 6-methyladenine residues, which was the only modification type found in this study.}
+  \label{tab:steno_epimotifs}
+\end{table}
 
 \section{Discussion}
 

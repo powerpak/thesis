@@ -55,6 +55,13 @@
     \usebibmacro{cite:title}}}{}{}
 \xpatchbibmacro{cite}{\setunit{\nametitledelim}}{}{}{}
 
+% When citing something in-text (usually in a caption) just use author-year.
+\xpatchbibmacro{textcite}
+  {\usebibmacro{cite:title}}
+  {\addspace\printtext[bibhyperref]{\printdate}}
+  {}
+  {}
+
 % Customize link colors. These are standard dvips or svgnames color names.
 % More colors at https://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips
 %   and http://www.latextemplates.com/svgnames-colors
@@ -99,6 +106,7 @@
 
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
+
 
 % Look for all graphics in this directory.
 \graphicspath {{figs/}}

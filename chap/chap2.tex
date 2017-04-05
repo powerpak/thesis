@@ -6,6 +6,7 @@
 %% prompt when you run the file main.tex through LaTeX.
 
 \chapter{Whole-genome sequencing identifies emergence of a quinolone resistance mutation in a case of \emph{Stenotrophomonas maltophilia} bacteremia}
+\label{chap:steno}
 
 \begin{quote}
 \emph{In this chapter we use next-generation sequencing to reveal the mechanism of emerging drug resistance in a case of hospital-acquired infection following the failure of routine antimicrobial therapy. Whole genome sequences for \emph{Stenotrophomonas maltophilia} serial isolates from a bacteremic patient before and after development of levofloxacin resistance were assembled \emph{de novo} and differed by one single-nucleotide variant in \emph{smeT}, a repressor for multidrug efflux operon \emph{smeDEF}. Along with sequenced isolates from five contemporaneous cases, they displayed considerable diversity compared against all previously published complete genomes. Whole genome sequencing and complete assembly can conclusively identify resistance mechanisms emerging in \emph{S. maltophilia} strains during clinical therapy.}
@@ -13,7 +14,7 @@
 
 \section{Introduction}
 
-\emph{Stenotrophomonas maltophilia} is an aerobic, non-fermenting, and motile Gram-negative bacterium that is increasingly recognized as a cause of hospital-acquired infections with crude mortality rates of 14–69\% in cases of bacteremia.\autocite{Brooke2012} Treatment of \emph{S. maltophilia} infections is challenging due to the pathogen’s intrinsic resistance to many antibiotic classes via drug efflux pumps, beta-lactamase production, and decreased membrane permeability.\autocite{Brooke2012} Resistance phenotypes are known to change during the course of treatment, which complicates interpretation of automated drug susceptibility testing (DST) results.\autocite{Garrison1996} A mutant strain of S. maltophilia with emerging resistance to tetracycline, chloramphenicol, and quinolones was previously characterized following in vitro tetracycline selection.\autocite{Alonso1997,Sanchez2002} However, little is known about the genetic and molecular mechanisms underlying acquired resistance in the clinical setting—particularly for quinolones, where in contrast to other Gram-negatives, the quinolone-resistance determining region (QRDR) of topoisomerase genes is often unaltered.\autocite{Valdezate2005} In this report, we describe the first reported use of whole genome sequencing (WGS) in serial clinical isolates to definitively identify an acquired quinolone resistance mutation in \emph{S. maltophilia}. WGS was performed for the initial and subsequent S. maltophilia blood culture isolates from a patient where acquired quinolone resistance was observed (Patient 1) and five other patients (Patients 2-6) selected from a two-month period in 2013 at The Mount Sinai Hospital. 
+\emph{Stenotrophomonas maltophilia} is an aerobic, non-fermenting, and motile Gram-negative bacterium that is increasingly recognized as a cause of hospital-acquired infections with crude mortality rates of 14–69\% in cases of bacteremia.\autocite{Brooke2012} Treatment of \emph{S. maltophilia} infections is challenging due to the pathogen’s intrinsic resistance to many antibiotic classes via drug efflux pumps, beta-lactamase production, and decreased membrane permeability.\autocite{Brooke2012} Resistance phenotypes are known to change during the course of treatment, which complicates interpretation of automated drug susceptibility testing (DST) results.\autocite{Garrison1996} A mutant strain of \emph{S. maltophilia} with emerging resistance to tetracycline, chloramphenicol, and quinolones was previously characterized following in vitro tetracycline selection.\autocite{Alonso1997,Sanchez2002} However, little is known about the genetic and molecular mechanisms underlying acquired resistance in the clinical setting—particularly for quinolones, where in contrast to other Gram-negatives, the quinolone-resistance determining region (QRDR) of topoisomerase genes is often unaltered.\autocite{Valdezate2005} In this report, we describe the first reported use of whole genome sequencing (WGS) in serial clinical isolates to definitively identify an acquired quinolone resistance mutation in \emph{S. maltophilia}. WGS was performed for the initial and subsequent \emph{S. maltophilia} blood culture isolates from a patient where acquired quinolone resistance was observed (Patient 1) and five other patients (Patients 2-6) selected from a two-month period in 2013 at The Mount Sinai Hospital. 
 
 \section{Case report}
 
@@ -21,7 +22,7 @@ Patient 1 was a 56 year-old man with a history of pancreatic cancer and a Whippl
 
 \section{Methods}
 
-Standard culturing and susceptibility testing for levofloxacin and SXT were performed by automated microbroth dilution with Vitek2® (bioMérieux). Antimicrobial sensitivities were reported and interpreted according to the 2015 CLSI guidelines for S. maltophilia.\autocite{ClinicalandLaboratoryStandardsInstitute2015} Isolates were then stocked and frozen at -80°C. Levofloxacin and SXT susceptibilities for all isolates in this study were later confirmed by Etest (bioMérieux) at 24 hours. To prepare for sequencing, isolates were grown from single colonies in tryptic soy broth, and DNA extraction was performed as previously described.\autocite{Altman2014}
+Standard culturing and susceptibility testing for levofloxacin and SXT were performed by automated microbroth dilution with Vitek2® (bioMérieux). Antimicrobial sensitivities were reported and interpreted according to the 2015 CLSI guidelines for \emph{S. maltophilia}.\autocite{ClinicalandLaboratoryStandardsInstitute2015} Isolates were then stocked and frozen at -80°C. Levofloxacin and SXT susceptibilities for all isolates in this study were later confirmed by Etest (bioMérieux) at 24 hours. To prepare for sequencing, isolates were grown from single colonies in tryptic soy broth, and DNA extraction was performed as previously described.\autocite{Altman2014}
 
 \subsection{Genome sequencing}
 
@@ -34,7 +35,7 @@ Depth of coverage reported in Table 1 was calculated by SMRTanalysis (version 2.
 
 \subsection{Accession numbers}
 
-Sequences and annotations for reference assemblies of clinical \emph{S. maltophilia} isolates K279a, R551-3, D457, and JV3 were obtained from GenBank/RefSeq at accession numbers \texttt{AM743169.1}, \texttt{NC\_011071.1}, \texttt{NC\_017671.1}, and \texttt{NC\_015947.1}, respectively. These represent the entirety of assemblies for S. maltophilia found in NCBI Assembly with an Assembly Level of “Complete Genome” (\url{http://www.ncbi.nlm.nih.gov/assembly/organism/40324/all/}) at the time of the study.\footnote{By 2017, excepting the three assemblies submitted as a result of this study, only one more complete genome (\href{https://www.ncbi.nlm.nih.gov/assembly/GCF\_002025605.1/}{ASM202560v1}) is available.} K279a and D457 were isolated from human infections, while R551-3 and JV3 were isolated from plants. Previously published sequences for the quinolone-resistance determining region (QRDR) of the \emph{gyrA}, \emph{gyrB}, \emph{parC} and \emph{parE} genes in \emph{S. maltophilia}\autocite{Valdezate2002} were obtained from EMBL/European Nucleotide Archive.
+Sequences and annotations for reference assemblies of clinical \emph{S. maltophilia} isolates K279a, R551-3, D457, and JV3 were obtained from GenBank/RefSeq at accession numbers \texttt{AM743169.1}, \texttt{NC\_011071.1}, \texttt{NC\_017671.1}, and \texttt{NC\_015947.1}, respectively. These represent the entirety of assemblies for \emph{S. maltophilia} found in NCBI Assembly with an Assembly Level of “Complete Genome” (\url{http://www.ncbi.nlm.nih.gov/assembly/organism/40324/all/}) at the time of the study.\footnote{By 2017, excepting the three assemblies submitted as a result of this study, only one more complete genome (\href{https://www.ncbi.nlm.nih.gov/assembly/GCF\_002025605.1/}{ASM202560v1}) is available.} K279a and D457 were isolated from human infections, while R551-3 and JV3 were isolated from plants. Previously published sequences for the quinolone-resistance determining region (QRDR) of the \emph{gyrA}, \emph{gyrB}, \emph{parC} and \emph{parE} genes in \emph{S. maltophilia}\autocite{Valdezate2002} were obtained from EMBL/European Nucleotide Archive.
 
 Complete genome sequences for ISMMS2, ISMMS2R, and ISMMS3 were deposited in GenBank at accession numbers \texttt{CP011305}, \texttt{CP011306}, and \texttt{CP011010}, respectively. Deposited sequences for ISMMS2 and ISMMS2R incorporate the Sanger corrected regions described above. Sequences for ISMMS4, ISMMS5, ISMMS6, and ISMMS7 were deposited as Whole Genome Shotgun projects at DDBJ/EMBL/GenBank under the accessions \texttt{JZIU00000000}, \texttt{JZIV00000000}, \texttt{JZIW00000000}, and \texttt{JZTX00000000}, respectively, with the versions described in this chapter at \texttt{JZIU01000000}, \texttt{JZIV01000000}, \texttt{JZIW01000000}, and \texttt{JZTX01000000}, respectively.
 
@@ -50,7 +51,7 @@ For each isolate, initial DNA modification motifs were first predicted by a de n
 
 \section{Results}
 
-Two complete whole genome sequences were derived from Patient 1’s isolates before and after the change in levofloxacin MIC and compared to whole genome sequences of five control S. maltophilia isolates (Patients 2-6). All sequences were \emph{de novo} assembled, i.e., without regard to reference assemblies. Table \ref{tab:steno_pts} summarizes the relative dates of collection, antimicrobial susceptibility results, and assembly statistics.
+Two complete whole genome sequences were derived from Patient 1’s isolates before and after the change in levofloxacin MIC and compared to whole genome sequences of five control \emph{S. maltophilia} isolates (Patients 2-6). All sequences were \emph{de novo} assembled, i.e., without regard to reference assemblies. Table \ref{tab:steno_pts} summarizes the relative dates of collection, antimicrobial susceptibility results, and assembly statistics.
 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{P}[1]{>{\PreserveBackslash\raggedright}p{#1}}
@@ -83,7 +84,7 @@ Two complete whole genome sequences were derived from Patient 1’s isolates bef
     \bottomrule
   \end{tabular}
   \end{flushleft}
-  \caption[Sequenced clinical isolates and their antimicrobial susceptibilities]{Sequenced clinical isolates and their antimicrobial susceptibilities. Abbreviations: Levo, levofloxacin; SXT, trimethoprim/sulfamethoxazole; S, susceptible; R, resistant; U, undetermined; Mbp, million base pairs; kbp, thousand base pairs. $^a$Time of collection was defined in days relative to the date of collecting the initial S. maltophilia isolate in the case patient. $^b$This is the change in levofloxacin susceptibility investigated in this study. $^c$Inconsistent results were obtained in replicate.}
+  \caption[Sequenced clinical isolates and their antimicrobial susceptibilities]{Sequenced clinical isolates and their antimicrobial susceptibilities. Abbreviations: Levo, levofloxacin; SXT, trimethoprim/sulfamethoxazole; S, susceptible; R, resistant; U, undetermined; Mbp, million base pairs; kbp, thousand base pairs. $^a$Time of collection was defined in days relative to the date of collecting the initial \emph{S. maltophilia} isolate in the case patient. $^b$This is the change in levofloxacin susceptibility investigated in this study. $^c$Inconsistent results were obtained in replicate.}
   \label{tab:steno_pts}
 \end{table*}
 
@@ -157,7 +158,7 @@ Since resistance from a single SNV emerged during a short course of ciprofloxaci
 
 In conclusion, characterizing the full extent of genetic alterations that \emph{S. maltophilia} utilizes to develop antibiotic resistance in vivo and improving genomic surveillance of clinical strains will help refine antibiotic selection criteria available to clinicians. This study furthermore highlights the utility of WGS for profiling the precise mutations underlying emerging antibiotic resistance in clinical cases of bacteremia.
 
-\section{Notes}
+\section*{Notes}
 
 A shortened version of this chapter was published in \textit{Antimicrobial Agents and Chemotherapy}.\autocite{Pak2015a}
 

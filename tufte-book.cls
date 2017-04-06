@@ -18,7 +18,7 @@
 \newsavebox{\@tufte@fullwidthcaption}
 \newcommand{\fullwidthlabelcaption}[3]{%
 \begin{lrbox}{\@tufte@fullwidthcaption}%
-  \begin{minipage}[\floatalignment]{\linewidth}\hbox{}%
+  \begin{minipage}[\floatalignment]{0.89\linewidth}\hbox{}%
     \origcaption[#2]{#3}\origlabel{#1}%
   \end{minipage}%
 \end{lrbox}%%
@@ -40,8 +40,10 @@
 \ifxetex
   \RequirePackage{fontspec}
   \newfontfamily\chapterNumber[Scale=6]{Cochin}
+  \newfontfamily\chapterTitle{Palatino}
 \else
   \newfont{\chapterNumber}{pplr9d scaled 7000}
+  \newfont{\chapterNumber}{pplr9d}
 \fi
 \definecolor{darkishgray}{gray}{0.40}
 \titleformat{\chapter}
@@ -49,7 +51,7 @@
     {\relax\begin{singlespace}\begin{fullwidth}}%format applied to label+text
     {{\chapterNumber\textbf{\thechapter}} \vspace{-0.5cm}}%label
     {0pt}%sep
-    {\huge\rmfamily\itshape\vspace*{.9em}\raggedright\color{darkishgray}}%before
+    {\chapterTitle\huge\itshape\vspace*{.9em}\raggedright\color{darkishgray}}%before
     [\normalsize\vspace{1em}\titlerule\end{fullwidth}\end{singlespace}\vspace{-1em}]%after
 
 %%

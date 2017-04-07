@@ -19,6 +19,10 @@
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \usepackage{fancyvrb}
 
+% Filter out all marginpar warnings, since tufte-book produces a ton of them
+\usepackage{silence}
+\WarningFilter*{latex}{Marginpar on page \thepage\space moved}
+
 % Use biblatex to allow for customization of citation vs. bibliography styles
 % and use of \autocite puts the citation in the margin for Tufte classes.
 % See also:
@@ -134,6 +138,8 @@
 \include{chap/chap2}
 \include{chap/chap3}
 \include{chap/chap4}
+\include{chap/chap5}
+
 
 \appendix
 \include{appa}

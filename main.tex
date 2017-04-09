@@ -18,6 +18,13 @@
 \usepackage{enumitem}
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \usepackage{fancyvrb}
+\usepackage{longtable}
+
+%%
+% If you want to only compile a specific chapter, i.e. to speed up compilation while writing, 
+% uncomment and use the following command
+% 
+\includeonly{chap/chap5}
 
 % Filter out all marginpar warnings, since tufte-book produces a ton of them
 \usepackage{silence}
@@ -111,6 +118,12 @@
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
 
+% Helps keep text ragged right in tables with cells that wrap text.
+% To use this, use P in a tabular specification: \begin{tabular}{P{2cm} ... }
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{P}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+% helps indent things in tables
+\newcommand*{\tabindent}{\hspace*{1em}}
 
 % Look for all graphics in this directory.
 \graphicspath {{figs/}}
@@ -129,7 +142,7 @@
 
 %%
 % We can set the line spacing for the main matter of the document using the toggles below.
-% Note that after we do this, we then have to fix spacing between \marginpar's.
+% Note that after we do this, we then have to reset spacing between \marginpar's.
 \mainmatter
 %\doublespacing
 \onehalfspacing

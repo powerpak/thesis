@@ -3,6 +3,7 @@
 %% Defines the cover material, including the title page, copyright page,
 %% signature page, abstract, and acknowledgements.
 
+% All of these pages have special geometry; undo tufte-latex's big margin
 \newgeometry{left=3.5cm,bottom=0.1cm}
 
 \title{Multiscale analysis of infectious diseases:\\
@@ -55,6 +56,7 @@
 % standard signature page required by ISMMS formatting
 \signaturepage
 
+% Restore the geometry of tufte-latex's big right margin
 \restoregeometry
 
 %% Either \input (*not* \include) your abstract file, or you can put

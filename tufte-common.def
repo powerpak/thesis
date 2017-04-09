@@ -1447,11 +1447,12 @@
 
 % Set the header/footer width to be the body text block plus the margin
 % note area.
-\AtBeginDocument{%
+\newcommand{\tuftefancyhfoffset}{
   \ifthenelse{\boolean{@tufte@symmetric}}
     {\fancyhfoffset[LE,RO]{\@tufte@overhang}}
     {\fancyhfoffset[RE,RO]{\@tufte@overhang}}
 }
+\AtBeginDocument{\tuftefancyhfoffset}
 
 % The running heads/feet don't have rules
 \renewcommand{\headrulewidth}{0pt}

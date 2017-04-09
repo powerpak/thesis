@@ -6,6 +6,8 @@
 \chapter{Whole-genome sequencing identifies emergence of a quinolone resistance mutation in a case of \emph{Stenotrophomonas maltophilia} bacteremia}
 \label{chap:steno}
 
+\hyphenation{Ste-no-tro-pho-mo-nas cip-ro-flox-a-cin}
+
 \begin{quote}
 \emph{In this chapter we use next-generation sequencing to reveal the mechanism of emerging drug resistance in a case of hospital-acquired infection following the failure of routine antimicrobial therapy. Whole genome sequences for \emph{Stenotrophomonas maltophilia} serial isolates from a bacteremic patient before and after development of levofloxacin resistance were assembled \emph{de novo} and differed by one single-nucleotide variant in \emph{smeT}, a repressor for multidrug efflux operon \emph{smeDEF}. Along with sequenced isolates from five contemporaneous cases, they displayed considerable diversity compared against all previously published complete genomes. Whole genome sequencing and complete assembly can conclusively identify resistance mechanisms emerging in \emph{S. maltophilia} strains during clinical therapy.}
 \end{quote}
@@ -49,13 +51,10 @@ For each isolate, initial DNA modification motifs were first predicted by a de n
 
 \newthought{Two complete} whole genome sequences were derived from Patient 1’s isolates before and after the change in levofloxacin MIC and compared to whole genome sequences of five control \emph{S. maltophilia} isolates (Patients 2-6). All sequences were \emph{de novo} assembled, i.e., without regard to reference assemblies. Table \ref{tab:steno_pts} summarizes the relative dates of collection, antimicrobial susceptibility results, and assembly statistics.
 
-\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
-\newcolumntype{P}[1]{>{\PreserveBackslash\raggedright}p{#1}}
-
 \begin{table*}[ht]
   \centering
   \small
-  \begin{flushleft}
+  \begin{flushleft}%
   \begin{tabular}{l P{1.5cm} P{1.5cm} l l l l P{2.5cm} P{1.5cm}}
     \toprule
     \multirow{2}{*}{Patient} & 
@@ -140,7 +139,7 @@ Recombination is not an obvious source of diversity in our \emph{S. maltophilia}
     ISMMS7   & CAG\underline{A}G \\
     \bottomrule
   \end{tabular}
-  \caption[Epigenetic motifs for clinical isolates of S. maltophilia]{\textbf{Diverse epigenetic motifs}, representing putative target sequences for each strain’s DNA methyltransferase enzymes, discovered for clinical isolates of \emph{S. maltophilia}.  Isolates are named as in Table \ref{tab:steno_pts}. The underlined A’s correspond to putative 6-methyladenine residues, which was the only modification type found in this study.}
+  \caption[Epigenetic motifs for clinical isolates of \emph{S. maltophilia}]{\textbf{Diverse epigenetic motifs}, representing putative target sequences for each strain’s DNA methyltransferase enzymes, discovered for clinical isolates of \emph{S. maltophilia}.  Isolates are named as in Table \ref{tab:steno_pts}. The underlined A’s correspond to putative 6-methyladenine residues, which was the only modification type found in this study.}
   \label{tab:steno_epimotifs}
 \end{table}
 
@@ -150,7 +149,7 @@ Recombination is not an obvious source of diversity in our \emph{S. maltophilia}
 
 \emph{smeT} appears to play a central role in adaptive resistance to quinolones and other antibiotics effluxed by \emph{smeDEF}, like tetracycline, chloramphenicol, erythromycin, and aminoglycosides. Since any mutation that inactivates this protein would be able to derepress \emph{smeDEF} and confer resistance, \emph{smeT} is under intense selective pressure in the presence of these drugs. In this study, we observed not only a deleterious SNV in the strain that displayed resistance (ISMMS2R), but a premature stop codon in \emph{smeT} in a strain that was already resistant at first isolation (ISMMS4). Certain nucleotide positions appear to be under greater selective pressure than others, as evidenced by our observation of the same mutation that occurred in D457R, and a relative paucity of nonsynonymous coding mutations in \emph{smeT} observed among clinical \emph{smeT} isolates.\autocite{Sanchez2004} Since sustained overexpression of \emph{smeDEF} is physiologically unfavorable \autocite{Alonso2004}, it is possible that pathogenic strains of \emph{S. maltophilia} rely on natural diversity of mutations in the \emph{smeT} locus to activate or deactivate \emph{smeDEF} expression, allowing for rapid adaptation to antibiotic stress, though further study is needed.
 
-Since resistance from a single SNV emerged during a short course of cip\-ro\-flox\-a\-cin, clinicians should be cautioned about using quinolone monotherapy for \emph{S. maltophilia} bacteremia, as highlighted in recent retrospective studies.\autocite{Cho2014a,Wang2014} The wide variety of MDR phenotypes and unreliability of DST results has created uncertainty about appropriate treatment for \emph{S. maltophilia}, but SXT remains the most common choice for monotherapy.\autocite{Brooke2012,Cho2014a,Wang2014} SXT resistance in \emph{S. maltophilia} is not known to be caused by efflux systems but has been linked to Class 1 integrons and ISCR elements.\autocite{Brooke2012} This suggests that spontaneous resistance is less likely to emerge with SXT monotherapy, although a clinical trial comparing the two antibiotics is warranted.\autocite{Cho2014a,Wang2014}
+Since resistance from a single SNV emerged during a short course of ciprofloxacin, clinicians should be cautioned about using quinolone monotherapy for \emph{S. maltophilia} bacteremia, as highlighted in recent retrospective studies.\autocite{Cho2014a,Wang2014} The wide variety of MDR phenotypes and unreliability of DST results has created uncertainty about appropriate treatment for \emph{S. maltophilia}, but SXT remains the most common choice for monotherapy.\autocite{Brooke2012,Cho2014a,Wang2014} SXT resistance in \emph{S. maltophilia} is not known to be caused by efflux systems but has been linked to Class 1 integrons and ISCR elements.\autocite{Brooke2012} This suggests that spontaneous resistance is less likely to emerge with SXT monotherapy, although a clinical trial comparing the two antibiotics is warranted.\autocite{Cho2014a,Wang2014}
 
 \newthought{In conclusion,} characterizing the full extent of genetic alterations that \emph{S. maltophilia} utilizes to develop antibiotic resistance in vivo and improving genomic surveillance of clinical strains will help refine antibiotic selection criteria available to clinicians. This study furthermore highlights the utility of WGS for profiling the precise mutations underlying emerging antibiotic resistance in clinical cases of bacteremia.
 

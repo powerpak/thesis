@@ -49,10 +49,10 @@ Our study’s time range included both a period where the EIA assay was the stan
 
 \subsection{Statistical Analysis}
 
-Propensity models for CDI based on the five case definitions were trained using logistic regression with elastic net regularization. Elastic net regularization aims to solve $$\min_{\beta_0,\beta} \frac{1}{N} \sum_{i=1}^{N} w_i l(y_i,\beta_0+\beta^T x_i) + \lambda\left[(1-\alpha)||\beta||_2^2/2 + \alpha ||\beta||_1\right]$$ over a grid of values of $\lambda$, which controls the overall penalization for model size. This penalization alleviates the degeneracies of logistic regression when $p$ > $N$. Here $l(y,\eta)$ is the negative binomial log-likelihood contribution for observation $i$, which is defined as $$y_i \cdot (\beta_0 + x_i^T \beta) - \log (1+e^{(\beta_0+x_i^T \beta)}).$$ The $\alpha$ hyper-parameter, controlling the ratio of $\ell_1$ to $\ell_2$ penalties, was empirically selected on models fit for the first case definition via grid search, maximizing mean area under the receiver operating characteristic curve (AUROC) under five-fold nested cross validation (all values for $\alpha$ ≤ 0.1 produced equivalent AUROCs) and checking for effective shrinkage of coefficients (to within one-fifth of the size of the simplest model). This resulted in selecting $\alpha$ = 0.03. The $\lambda$ hyper-parameter was empirically selected for each modeled case definition by maximizing mean AUROC under five-fold cross validation (Figure \ref{fig:selecting_lambda}).
+Propensity models for CDI based on the five case definitions were trained using logistic regression with elastic net regularization. Elastic net regularization aims to solve $$\min_{\beta_0,\beta} \frac{1}{N} \sum_{i=1}^{N} w_i l(y_i,\beta_0+\beta^T x_i) + \lambda\left[(1-\alpha)||\beta||_2^2/2 + \alpha ||\beta||_1\right]$$ over a grid of values of $\lambda$, which controls the overall penalization for model size.\footnote{This penalization alleviates the degeneracies of logistic regression when the number of predictor variables $p$ > $N$. FIXME: define other variables.} Here $l(y,\eta)$ is the negative binomial log-likelihood contribution for observation $i$, which is defined as $$y_i \cdot (\beta_0 + x_i^T \beta) - \log (1+e^{(\beta_0+x_i^T \beta)}).$$ The $\alpha$ hyper-parameter, controlling the ratio of $\ell_1$ to $\ell_2$ penalties, was empirically selected on models fit for the first case definition via grid search, maximizing mean area under the receiver operating characteristic curve (AUROC) under five-fold nested cross validation (all values for $\alpha$ ≤ 0.1 produced equivalent AUROCs) and checking for effective shrinkage of coefficients (to within one-fifth of the size of the simplest model). This resulted in selecting $\alpha$ = 0.03. The $\lambda$ hyper-parameter was empirically selected for each modeled case definition by maximizing mean AUROC under five-fold cross validation (Figure \ref{fig:selecting_lambda}).
 \begin{figure*}[tbp]
   \includegraphics[width=0.9\textwidth]{chap4/S1_selecting_lambda}
-  \fullwidthlabelcaption{fig:selecting_lambda}{Empirical selection of the regularization penalty hyper-parameter $\lambda$}{
+  \fullwidthlabelcaption{fig:selecting_lambda}{Selection of the regularization penalty hyper-parameter $\lambda$}{
     \textbf{Empirical selection of the regularization penalty hyper-parameter $\lambda$.} A–E, mean area under the receiver operating characteristic curve (AUC) vs. $\log (\lambda)$ for each of the case definitions for \emph{C. difficile} infection, based on five-fold cross-validation. As the $\log (\lambda)$ penalty hyper-parameter increases, the number of variables left in the model (i.e., with nonzero coefficients) decreases; these are listed across the top of each plot. Vertical bars indicate standard errors. The $\log (\lambda)$ value with maximal mean AUC and the $\log (\lambda)$ value with mean AUC within 1 standard deviation of the maximum are highlighted by vertical dashed lines; the former was used for the final propensity models. ICD-9, International Classification of Diseases Ninth Revision; EIA, enzyme immunoassay; PCR, polymerase chain reaction.
   }
 \end{figure*}
@@ -95,74 +95,7 @@ After filtering for the index visit per adult patient and excluding deaths and i
 Regularized logistic regression models predicting the risk of CDI acquisition were fit to EMR data from the first 24 hours of each admission for each case definition. The cross-validated mean area under the receiving operator characteristic (AUROC), measuring performance of each model, varied only slightly between case definitions (Figure \ref{fig:cdi_ROC}): (i) by ICD-9 code, 0.81 (95\% confidence interval [CI], 0.79–0.83); (ii) by positive toxin EIA, 0.76 (95\% CI, 0.74–0.78), (iii) by positive toxin PCR, 0.84 (95\% CI, 0.82–0.85), (iv) by either toxin assay, 0.81 (95\% CI, 0.80–0.82); (v) by any of these, 0.82 (95\% CI, 0.81–0.83). The number of selected variables in each model ranged from 373 to 1,027.
 
 \begin{table*}[ht]
-  \footnotesize
-  \begin{flushleft}%
-  \begin{tabular}{l P{3.15cm} P{1.6cm} P{1.6cm} P{1.2cm} P{1.6cm} P{1.6cm} P{1.2cm}}
-    \toprule
-    & & \multicolumn{6}{l}{\textbf{Matched cohorts for each CDI case definition}} \\
-    \cmidrule(r){3-8}
-    & & \multicolumn{3}{l}{(i) by ICD-9 code} & \multicolumn{3}{l}{(ii) by EIA (+)} \\
-    \cmidrule(r){3-5}\cmidrule(r){6-8}
-    & No. (\%) & \multicolumn{2}{l}{No. (\%)} & & \multicolumn{2}{l}{No. (\%)} & \\
-    \cmidrule(r){2-2}\cmidrule(r){3-4}\cmidrule(r){6-7}
-    \textbf{Characteristic} &
-    All patients (n=171,936) &
-    All controls (n=171,356) &
-    Matched cases \& controls$^a$ (n=489) &
-    SMD after matching (\emph{P} value) &
-    All controls (n=73,647) &
-    Matched cases \& controls$^a$ (n=274) &
-    SMD after matching (\emph{P} value)
-    \\
-    \midrule
-    Female sex & 101,964 (59) & 101,638 (59) & 278 (57) & 0 (1) & 44,132 (60) & 145 (53) & 0 (1) \\
-    Age$^b$ \\
-    \-\tabindent{}18-29 & 22,344 (13) & 22,266 (13) & 69 (14)   & \multirow{6}{1.5cm}{0.016 (0.86)} &
-        9,552 (13) & 22 (8) & \multirow{6}{1.5cm}{0.018 (0.79)} \\
-    \-\tabindent{}30-44 & 39,003 (23) & 38,898 (23) &  86 (18)  &  & 16,451 (22) & 26 (9)  & \\
-    \-\tabindent{}45-59 & 37,234 (22) & 37,129 (22) &  90 (18)  &  & 15,956 (22) & 58 (21) & \\
-    \-\tabindent{}60-74 & 43,946 (26) & 43,802 (26) & 122 (25)  &  & 18,407 (25) & 83 (30) & \\
-    \-\tabindent{}75-90 & 26,167 (15) & 26,041 (15) & 106 (22)  &  & 11,817 (16) & 70 (26) & \\
-    \-\tabindent{}≥90   &  3,244 (2)  &  3,220 (2)  &  16 (3)   &  &  1,464 (2)  & 15 (5)  & \\
-    \bottomrule
-  \end{tabular}
-  
-  \vspace{1em}
-  
-  \begin{tabular}{l P{1.3cm} P{1.2cm} P{1.2cm} P{1.3cm} P{1.2cm} P{1.2cm} P{1.3cm} P{1.2cm} P{1.2cm}}
-    \toprule
-    & \multicolumn{6}{l}{\textbf{Matched cohorts for each CDI case definition (cont.)}} \\
-    \cmidrule(r){2-10}
-    & \multicolumn{3}{l}{(iii) by PCR (+)} & \multicolumn{3}{l}{(iv) by EIA or PCR (+)} & 
-      \multicolumn{3}{l}{(v) by any of the criteria} \\
-    \cmidrule(r){2-4}\cmidrule(r){5-7}\cmidrule(r){8-10}
-    & \multicolumn{2}{l}{No. (\%)} & & \multicolumn{2}{l}{No. (\%)} & & \multicolumn{2}{l}{No. (\%)} & \\
-    \cmidrule(r){2-3}\cmidrule(r){5-6}\cmidrule(r){8-9}
-    \textbf{Characteristic} &
-    All controls (n=97,351) &
-    Matched cases \& controls$^a$ (n=493) &
-    SMD after matching (\emph{P} value) &
-    All controls (n=170,994) &
-    Matched cases \& controls$^a$ (n=788) &
-    SMD after matching (\emph{P} value) &
-    All controls (n=170,846) &
-    Matched cases \& controls$^a$ (n=945) &
-    SMD after matching (\emph{P} value)
-    \\
-    \midrule
-    Female sex & 57,340 (59) & 254 (52) & 0 (1) & 101,469 (59) & 408 (52) & 0 (1) & 101,390 (59) & 493 (52) & 0 (1) \\
-    Age$^b$ \\
-    \-\tabindent{}18-29 & 12,714 (13) &  47 (10) & \multirow{6}{1.2cm}{0.005 (0.99)} & 
-        22,265 (13) & 79 (9) & \multirow{6}{1.2cm}{0.003 (0.98)} &
-        22,245 (13) & 87 (9) & \multirow{6}{1.2cm}{0.004 (0.93)} \\
-    \-\tabindent{}30-44 & 22,430 (23) &  72 (15) &  & 38,879 (23) & 124 (13) & & 38,845 (23) & 134 (14) & \\
-    \-\tabindent{}45-59 & 21,069 (22) & 117 (24) &  & 37,025 (22) & 209 (23) & & 36,999 (22) & 208 (22) & \\
-    \-\tabindent{}60-74 & 25,273 (26) & 136 (28) &  & 43,680 (26) & 266 (29) & & 43,643 (26) & 267 (28) & \\
-    \-\tabindent{}75-90 & 14,120 (15) & 114 (23) &  & 25,936 (15) & 231 (24) & & 25,912 (15) & 217 (23) & \\
-    \-\tabindent{}≥90   &  1,745 (2)  &   7 (1)  &  &  3,209 (2)  &  35 (3)  & &  3,202 (2)  &  32 (3)  & \\
-    \bottomrule
-  \end{tabular}
-  \end{flushleft}
+  \input{chap/tables/cdi-pts}
   \caption[Demographic characteristics of the study population and matched cohorts]{\textbf{Demographic characteristics of the study population and matched cohorts.} Abbreviation: CDI, Clostridium difficile infection; ICD-9, International Classification of Diseases Ninth Revision; EIA, enzyme immunoassay; PCR, polymerase chain reaction; SMD, standardized mean difference. $^a$Separate columns are unnecessary because 1:1 exact matching was performed on the characteristics shown, and therefore all values are identical. $^b$SMD is shown for age treated as a continuous variable; coarsened exact matching was performed using the listed age ranges.
 }
   \label{tab:cdi_pts}
@@ -197,7 +130,7 @@ There were no significant differences in LOS for a second round of matching betw
 Estimates of LOS associated with CDI are inflated by dependencies on time-to-infection—if longer pre-infection LOS increases CDI risk, i.e., reverse causation, this leads to overestimates in attributable cost.\autocite{Mitchell2014,Stevens2015} We therefore performed two follow-up analyses to account for this. First, we stratified the LOS comparison by the time of CDI diagnosis for case definition (iv) into 0–3 day, 3–8 day, and ≥8 day case cohorts, training new propensity models for another matched comparison, with similar matching performance (Figure \ref{fig:timedep_psm_density}).
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{chap4/S5_timedep_psm_density}
-  \caption[Propensity score distributions for matched cohorts stratified by time of CDI diagnosis][-1.5cm]{
+  \caption[Propensity score distributions for matched cohorts stratified by time of \emph{C. difficile} infection diagnosis][-1.5cm]{
     \textbf{Propensity score distributions for matched cohorts stratified by time of CDI diagnosis.} A-C, density plots of propensity score distributions for matched cases, matched controls, matched-again controls, and all controls for cases defined by any positive toxin assay, stratified by the time to infection. Matched-again controls are derived from a second round of matching between the case-matched controls from the first round of matching and remaining unmatched controls. All X axes are logit-scaled. All Y axes are scaled to unit probabilities; the area under every curve equals 1. The matching algorithm intends to align the propensity score distributions for all of the matched groups. CA, community acquired; HA, health- care associated.
   }
   \label{fig:timedep_psm_density}
@@ -206,7 +139,7 @@ Since 3 days (or 72 hours) is a typical cutoff for differentiating community acq
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{chap4/3a_timedep_violin}
-  \caption[Changes in length of stay for \emph{C. difficile} infection defined by any positive toxin assay, stratified by the time to infection]{
+  \caption[Changes in length of stay for \emph{C. difficile} infection defined by any positive toxin assay and stratified by the time to infection]{
     \textbf{Changes in length of stay for \emph{C. difficile} infection defined by any positive toxin assay, stratified by the time to infection.} Violin plots of the distributions in length of stay for matched cases, matched controls, matched-again controls, and all controls, for three ranges of the result time for the first positive toxin assay. Points and vertical bars depict the median and interquartile range for each group. Horizontal bars depict Mann-Whitney \emph{U} tests for significance of differences between groups (***, Bonferroni-corrected \emph{P} < 0.001; NS, not significant [P > 0.1]). CA, community acquired; HA, healthcare associated.
   }
   \label{fig:timedep_violin}
@@ -229,7 +162,7 @@ To summarize the overall relationship between CDI and LOS, differences in LOS we
 \begin{figure*}[htb]
   \centering
   \includegraphics[width=0.8\textwidth]{chap4/4b_etm}
-  \caption[Expected remaining length of stay for \emph{C. difficile} infection case definitions predicted by a multistate model][-4cm]{\textbf{Expected remaining length of stay for \emph{C. difficile} infection case definitions predicted by a multistate model.} A-C, expected remaining LOS for each post-admit time $t$ depending on whether the patient has had a positive (+) toxin assay by that timepoint, for each of the case definitions involving toxin assays. Shaded areas depict 95\% confidence intervals calculated from 1,000 bootstrap samples. CDI, Clostridium difficile infection; EIA, enzyme immunoassay; PCR, polymerase chain reaction; LOS, length of stay.
+  \caption[Expected remaining length of stay for \emph{C. difficile} infection case definitions as predicted by a multistate model][-4cm]{\textbf{Expected remaining length of stay for \emph{C. difficile} infection case definitions predicted by a multistate model.} A-C, expected remaining LOS for each post-admit time $t$ depending on whether the patient has had a positive (+) toxin assay by that timepoint, for each of the case definitions involving toxin assays. Shaded areas depict 95\% confidence intervals calculated from 1,000 bootstrap samples. CDI, Clostridium difficile infection; EIA, enzyme immunoassay; PCR, polymerase chain reaction; LOS, length of stay.
   }
   \label{fig:etm}
 \end{figure*}
@@ -250,18 +183,18 @@ Our study has several limitations. The analysis was designed with conservative a
 
 \section*{Notes}
 
-\subsection{Contributors}
+\subsection*{Contributors}
 
 Theodore Pak (\smallcaps{TRP}), Kieran Chacko (\smallcaps{KC}), Timothy O'Donnell (\smallcaps{TO}), Shirish Huprikar (\smallcaps{SH}), Harm van Bakel (\smallcaps{HVB}), Andrew Kasarskis (\smallcaps{AK}), and Erick R. Scott (\smallcaps{ERS}) contributed to this study. \smallcaps{TRP}, \smallcaps{KC}, \smallcaps{AK}, and \smallcaps{ERS} designed the study and developed the models. \smallcaps{TRP}, \smallcaps{KC}, \smallcaps{TO}, \smallcaps{SH}, \smallcaps{HVB}, \smallcaps{AK}, and \smallcaps{ERS} acquired the data. \smallcaps{TRP} performed the data analysis and created all figures in this chapter. \smallcaps{SH} reviewed selected variables for the propensity model. \smallcaps{TO} provided technical support, and \smallcaps{HVB}, \smallcaps{SH}, and \smallcaps{AK} provided administrative and material support. \smallcaps{AK} and \smallcaps{ERS} supervised the study. \smallcaps{TRP} wrote the first draft of this chapter.
 
-\subsection{Funding}
+\subsection*{Funding}
 
 This work was supported by the Icahn Institute for Genomics and Multiscale Biology at Mount Sinai, and also in part by the NIH/NIAID grants F30-AI122673 (\smallcaps{TRP}), T32-GM007280 (\smallcaps{TRP}), and R01-AI119145 (\smallcaps{HVB}, \smallcaps{KC}).
 
-\subsection{Conflict of Interest}
+\subsection*{Conflict of Interest}
 
 The authors have no conflicts of interest to disclose.
 
-\subsection{Acknowledgements}
+\subsection*{Acknowledgements}
 
 This work was supported in part by the resources and expertise of the Department of Scientific Computing at the Icahn School of Medicine at Mount Sinai. We thank Deena Altman, Camille Hamula, and Gopi Patel for their assistance in improving the design of the study and reviewing the manuscript.

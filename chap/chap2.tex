@@ -52,33 +52,7 @@ For each isolate, initial DNA modification motifs were first predicted by a de n
 \newthought{Two complete} whole genome sequences were derived from Patient 1’s isolates before and after the change in levofloxacin MIC and compared to whole genome sequences of five control \emph{S. maltophilia} isolates (Patients 2-6). All sequences were \emph{de novo} assembled, i.e., without regard to reference assemblies. Table \ref{tab:steno_pts} summarizes the relative dates of collection, antimicrobial susceptibility results, and assembly statistics.
 
 \begin{table*}[ht]
-  \centering
-  \small
-  \begin{flushleft}%
-  \begin{tabular}{l P{1.5cm} P{1.5cm} l l l l P{2.5cm} P{1.5cm}}
-    \toprule
-    \multirow{2}{*}{Patient} & 
-    \multirow{2}{1.5cm}{Time of collection (days)$^a$} &
-    \multirow{2}{1.5cm}{Isolate name} &
-    \multicolumn{2}{P{3cm}}{Levo susceptibility (MIC, mg/L)} &
-    \multicolumn{2}{P{3cm}}{SXT susceptibility (MIC, mg/L)} &
-    \multirow{2}{2.5cm}{Assembly quality} &
-    \multirow{2}{1.5cm}{Depth of coverage}
-    \\
-    \cmidrule(r){4-5}\cmidrule(r){6-7}
-    & & & Vitek2 & Etest & Vitek2 & Etest & &
-    \\
-    \midrule
-    1  &  0   & ISMMS2  &  S (0.5)$^b$ &  S (1)     & S (<20)      & S (0.19) & 1 circular 4.51Mbp chromosome & 160x \\
-    1  &  +10 & ISMMS2R &  R (>32)$^b$ &  R (16)    & S (1)        & S (0.38) & 1 circular 4.51Mbp chromosome & 403x \\
-    2  &  -26 & ISMMS3  &  S (0.25)  &  S (0.38)  & U (80, <20)$^c$ & S (0.75) & 1 circular 4.80Mbp chromosome & 153x \\
-    3  &  +14 & ISMMS4  &  R (>8)    &  R (>12)   & U (0.5, 80)$^c$ & S (0.75) & 3 contigs (4.73Mbp, 6.5kbp, 11.2kbp) & 303x \\
-    4  &  -32 & ISMMS5  &  S (1)     &  S (1)     & S (<20)      & S (0.25) & 18 contigs & 270x\\
-    5  &  0   & ISMMS6  &  S (<0.12) &  S (0.125) & S (<20)      & S (1.5)  & 10 contigs & 262x\\
-    6  &  +2  & ISMMS7  &  S (1)     &  S (0.75)  & S (<20)      & S (1.5)  & 1 circular 4.69Mbp chromosome, 1 additional 17.7kbp contig & 318x\\
-    \bottomrule
-  \end{tabular}
-  \end{flushleft}
+  \input{chap/tables/steno-isolates}
   \caption[Sequenced clinical isolates and their antimicrobial susceptibilities]{\textbf{Sequenced clinical isolates and their antimicrobial susceptibilities.} Abbreviations: Levo, levofloxacin; SXT, trimethoprim/sulfamethoxazole; S, susceptible; R, resistant; U, undetermined; Mbp, million base pairs; kbp, thousand base pairs. $^a$Time of collection was defined in days relative to the date of collecting the initial \emph{S. maltophilia} isolate in the case patient. $^b$This is the change in levofloxacin susceptibility investigated in this study. $^c$Inconsistent results were obtained in replicate.}
   \label{tab:steno_pts}
 \end{table*}
@@ -125,20 +99,7 @@ The QRDR are loci within genes encoding topoisomerase II and IV subunits known f
 Recombination is not an obvious source of diversity in our \emph{S. maltophilia} isolates. Figure \ref{fig:mauve} depicts whole genome alignments between the four clinical isolates where assembly produced a circularized chromosome and the four GenBank references, showing small areas of non-homology separating large regions of significant homology occurring generally in the same order for each genome. ISMMS2 and ISMMS2R are structurally identical, as expected for serial isolates, while recombination events among other strains are limited to small 1-2kb segments. Epigenetics motif analysis also suggests that the isolates are not related. Table \ref{tab:steno_epimotifs} shows different motifs in isolates from separate patients, implicating differences in type II \& III restriction modification systems between the isolates more likely to be caused by inter-strain/species horizontal transfer of methyltransferases than by intra-strain mutations.\autocite{Srikhanta2010} Together, this demonstrates that transmission did not occur among these six cases and that whole-genome sequencing can comprehensively capture genetic distances and structural variants among diverse clinical isolates of \emph{S. maltophilia}.
 
 \begin{table}[ht]
-  \centering
-  \begin{tabular}{l l}
-    \toprule
-    Isolate name & Epigenetic motifs \\
-    \midrule
-    ISMMS2   & AGT\underline{A}CT \\
-    ISMMS2R  & AGT\underline{A}CT \\
-    ISMMS3   & None \\
-    ISMMS4   & CAG\underline{A}G \\
-    ISMMS5   & CTGG\underline{A}C, CACAN\underline{A}G \\
-    ISMMS6   & CAAC\underline{A}C, CTG\underline{A}TG, CAACG\underline{A}C \\
-    ISMMS7   & CAG\underline{A}G \\
-    \bottomrule
-  \end{tabular}
+  \input{chap/tables/steno-epigenetic}
   \caption[Epigenetic motifs for clinical isolates of \emph{S. maltophilia}]{\textbf{Diverse epigenetic motifs}, representing putative target sequences for each strain’s DNA methyltransferase enzymes, discovered for clinical isolates of \emph{S. maltophilia}.  Isolates are named as in Table \ref{tab:steno_pts}. The underlined A’s correspond to putative 6-methyladenine residues, which was the only modification type found in this study.}
   \label{tab:steno_epimotifs}
 \end{table}
@@ -157,14 +118,14 @@ Since resistance from a single SNV emerged during a short course of ciprofloxaci
 
 A shortened version of this chapter was published in \textit{Antimicrobial Agents and Chemotherapy}.\autocite{Pak2015a}
 
-\subsection{Funding}
+\subsection*{Funding}
 
 Funding was provided by the Icahn Institute for Genomics and Multiscale Biology at Mount Sinai, and also in part by the NIAID-supported NRSA Institutional Research Training Grant (5 T32 AI 7647-13) for Global Health Research (DRA).
 
-\subsection{Conflict of Interest}
+\subsection*{Conflict of Interest}
 
 The authors have no conflicts of interest to disclose.
 
-\subsection{Acknowledgements}
+\subsection*{Acknowledgements}
 
 We thank Timothy O’Donnell, Tavi Nathanson, Jose Clemente, Flora Samaroo, Angelo Rendo, and members of the clinical microbiology laboratory at Mount Sinai for their contributions. This work was supported in part by the resources and expertise of the Department of Scientific Computing at the Icahn School of Medicine at Mount Sinai.

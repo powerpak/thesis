@@ -16,76 +16,7 @@ Our capacity to acquire “omics” data about infections is increasing exponent
 
 Many public databases curate and disseminate “omics” data relevant to infectious disease (Table \ref{tab:id_bioinf_dbs}), 
 \begin{table*}[ht]
-  \centering
-  \small
-  \begin{tabular}{p{3.5cm} l l l}
-    \toprule
-    \textbf{Database focus} & \multicolumn{1}{c}{For general research} & \multicolumn{2}{c}{For infectious disease}\\
-    \cline{3-4}
-    & & \multicolumn{1}{c}{Multi-pathogen} & \multicolumn{1}{c}{Pathogen-specific} \\
-    \midrule
-    Genomes &
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item NCBI Nucleotide (GenBank/RefSeq)
-      \item ENA/EMBL
-      \item DDBJ
-      \end{itemize}
-    \end{minipage} & 
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item ViPR
-      \item NMPDR
-      \item PATRIC
-      \item EuPathDB
-      \end{itemize}
-    \end{minipage} & 
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Influenza Research Database (IRD)
-      \item Tuberculosis Database (TBDB)
-      \item LANL: Databases for HIV, HCV, and HFV 
-      \end{itemize}
-    \end{minipage}
-    \\
-    Gene products and functionality &
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item UniProt
-      \item KEGG
-      \end{itemize}
-    \end{minipage} &
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Pathogen-Host Interaction Database 
-      \item Antibiotic Resistance Genes Database
-      \item Comprehensive Antibiotic Resistance Database
-      \end{itemize}
-      \smallskip
-    \end{minipage} &
-    \\
-    Expression and immune profiles &
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item GEO
-      \item ArrayExpress
-      \end{itemize}
-    \end{minipage} &
-    \begin{minipage}[t]{3.5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item ImmPort
-      \end{itemize}
-    \end{minipage} &
-    \\
-    \bottomrule
-  \end{tabular}
+  \input{chap/tables/review-dbs}
   \caption[Bioinformatics databases for infectious diseases][12pt]{Examples of public bioinformatics databases that may be leveraged for multiscale analysis of infectious disease (this list is not exhaustive).}
   \label{tab:id_bioinf_dbs}
 \end{table*}
@@ -110,134 +41,7 @@ An oft-mentioned hurdle\autocite{Didelot2012,Koser2012} for widespread use of NG
 \newthought{This expectation} has three foreseeable shortcomings. The first is that current tools are tied to centrally curated repositories of evidence. Although proponents of genomic clinical microbiology often envision encyclopedic databases hosted by international consortia,\autocite{Didelot2012,Koser2012} human curation is expensive and inefficient at scale, and many infectious diseases are locale-specific phenomena. Models based on pooled data may fail to reflect variation between healthcare delivery regions;\autocite{Reis2003,Wiens2014} for instance, a recent fitness model of H3N2 influenza based on international genomic surveillance data creates predictions only at the resolution of clades spanning multiple continents.\autocite{Luksza2014} Since implementation of NGS in a healthcare institution’s microbiology laboratory produces copious sequencing data not easily shared through public databases, institutions should prepare to manage repositories of local evidence and predictive models that work specifically for them. Over time, as data exchange interfaces are developed, institutions could form consortia to generalize analyses, which is a strategy that has successfully increased the power of human genome-wide association studies.\sidecite[-3em]{Gottesman2013,Kohane2012}
 
 \begin{table}[ht]
-  \centering
-  \small
-  \begin{tabular}{l l}
-    \toprule
-    \textbf{Problem domain} & \textbf{Software or database}\\
-    \midrule
-    Strain typing &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Multi-Locus Sequence Typing (MLST) database
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    \textit{De novo} assembly from long reads &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Celera
-      \item Hierarchical Genome Assembly Process
-      \end{itemize}
-    \end{minipage}
-    \\
-    Species identification &
-    \\
-    \-\tabindent From clonal sample &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item NCBI BLAST
-      \item GenBank
-      \item Other databases in Table \ref{tab:id_bioinf_dbs}
-      \end{itemize}
-    \end{minipage}
-    \\
-    \-\tabindent From non-clonal sample &
-    \\
-    \-\tabindent\tabindent  Meta-assembly &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item AMOS
-      \item MIRA
-      \item MetaVelvet
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    \-\tabindent\tabindent Clustering and species annotation &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item MEGAN
-      \item MG-RAST
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    Maximum likelihood phylogeny trees &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item BEAST
-      \item RAxML
-      \item ClonalFrame
-      \item ClonalOrigin
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    Whole genome alignment &
-    \\
-    \-\tabindent For SNP calling &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Mummer
-      \item Mugsy
-      \item Harvest
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    \-\tabindent For structural variant calling &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Mauve
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    Gene annotation &
-    \\
-    \-\tabindent Bacterial &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Glimmer
-      \item RAST
-      \item prokka
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    \-\tabindent Drug resistance in bacteria &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Resfinder
-      \item ARG-ANNOT
-      \item Mykrobe predictor
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    \-\tabindent Other &
-    \begin{minipage}[t]{5cm}
-      \raggedright
-      \begin{itemize}[noitemsep]
-      \item Influenza Virus Sequence Annotation Tool
-      \end{itemize}
-      \smallskip
-    \end{minipage}
-    \\
-    \bottomrule
-  \end{tabular}
+  \input{chap/tables/review-tools}
   \caption[Bioinformatics tools for infectious diseases]{Selected published bioinformatics software packages or databases that address specific steps of clinical microbiology tasks using NGS data (this list is not exhaustive). Well-established tools are available for many specific subtasks.}
   \label{tab:id_bioinf_tools}
 \end{table}
@@ -309,13 +113,13 @@ Healthcare institutions and researchers should recognize that a potent combinati
 
 A shortened version of this chapter was published in \textit{Clinical Infectious Diseases}.\autocite{Pak2015}
 
-\subsection{Acknowledgements}
+\subsection*{Acknowledgements}
 
 We thank Deena Altman and Shirish Huprikar for critical suggestions on the manuscript.
 
-\subsection{Financial support}
+\subsection*{Financial support}
 
 The authors were supported by the Icahn Institute for Genomics and Multiscale Biology at Mount Sinai.
 
-\subsection{Potential conflicts of interest}
+\subsection*{Potential conflicts of interest}
 We certify no potential conflicts of interest.

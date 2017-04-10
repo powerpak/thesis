@@ -3,7 +3,7 @@
 % Recalculate fancy header/footer after geometry change (otherwise page numbers are misplaced)
 \fancyhfoffset[E,O]{0pt}
 
-\chapter{Supplementary Appendix}
+\chapter{Appendix Tables}
 
 \begin{flushleft}
 \small
@@ -81,6 +81,61 @@
     \label{tab:excluded_vars}
 \end{longtable}
 \end{flushleft}
+
+\begin{table*}[hp]
+  \fullwidthlabelcaption{tab:chik_antibodies}{Antibodies used for CyTOF analysis}{
+    \small
+    \textbf{Antibodies used for CyTOF analysis in Chapter \ref{chap:chik}}. All antibodies were either purchased directly from Fluidigm or conjugated in-house using X8 conjugation kits. \vspace{1em}
+  }
+  \small
+  \begin{tabular}{l l l l}
+    \toprule
+    Isotope & Target & Clone & Source \\
+    \midrule
+    113 In & CD57 & HCD57 & Biolegend \\
+    115 In & CD45 & HI130 & Biolegend \\
+    142 Nd & CD19 & HIB19 & Biolegend \\
+    143 Nd & CD45RA & HI100 & Biolegend \\
+    144 Nd & CD141 & M80 & Biolegend \\
+    145 Nd & CD4 & RPA-T4 & Biolegend \\
+    146 Nd & CD8 & RPA-T8 & Biolegend \\
+    147 Sm & CD20 & 2H7 & Fluidigm \\
+    148 Nd & CD16 & 3G8 & Biolegend \\
+    149 Sm & CD127 & A019D5 & Biolegend \\
+    150 Nd & CD1c & L161 & Biolegend \\
+    151 Eu & CD123 & 6H6 & Biolegend \\
+    152 Sm & CD66b & G10F5 & Biolegend \\
+    153 Eu & CXCR5 & RF8B2 & Fluidigm \\
+    154 Sm & CD86 & IT2.2 & Biolegend \\
+    155 Gd & CD27 & O323 & Biolegend \\
+    156 Gd & CCR5 & NP-6G4 & Fluidigm \\
+    158 Gd & CHIKV & ? & ? \\
+    159 Tb & CD11c & Bu15 & Fluidigm \\
+    160 Gd & CD14 & M5E2 & Biolegend \\
+    161 Dy & CD56 & B159 & BD Biosciences \\
+    162 Dy & CD80 & 2D10.4 & Fluidigm \\
+    163 Dy & CCR4 & 205410 & R\&D Systems \\
+    164 Dy & CD40 & 5C3 & Biolegend \\
+    165 Ho & CCR6 & G034E3 & Biolegend \\
+    166 Er & CD25 & M-A251 & Biolegend \\
+    167 Er & CCR7 & G043H7 & Biolegend \\
+    168 Er & CD3 & UCHT1 & Biolegend \\
+    169 Tm & CX3CR1 & 2A9-1 & Biolegend \\
+    170 Er & CD38 & HB-7 & Biolegend \\
+    171 Yb & CD161 & HP-3G10 & Biolegend \\
+    172 Yb & CD209 & 9E9A8 & Biolegend \\
+    173 Yb & CXCR3 & G025H7 & Biolegend \\
+    174 Yb & HLADR & L243 & Biolegend \\
+    175 Lu & PD-1 & EH12.2H7 & Fluidigm \\
+    176 Yb & CD54 & HCD54 & Biolegend \\
+    209 Bi & CD11b & ICRF44 & Fluidigm \\
+    194Pt & CD45 (acute BC) & HI130 & Biolegend \\
+    198Pt  & CD45 (conv BC) & HI130 & Biolegend \\
+    103 Rh  & Viability & n/a & Fluidigm \\
+    191/193 Ir & DNA & n/a & Fluidigm \\
+    \bottomrule
+  \end{tabular}
+\end{table*}
 
 % Restore the geometry of tufte-latex's big right margin
 \restoregeometry

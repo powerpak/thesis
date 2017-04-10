@@ -96,8 +96,8 @@
 }
 
 %%
-% Show chapter and section titles in the table of contents
-\setcounter{tocdepth}{1}
+% Show chapter, section, and subsection titles in the table of contents
+\setcounter{tocdepth}{2}
 
 %%
 % Simplify sidenote citations to only show author, year, and title.

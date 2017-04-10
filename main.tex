@@ -24,7 +24,7 @@
 % If you want to only compile a specific chapter, i.e. to speed up compilation while writing, 
 % uncomment and use the following command
 % 
-\includeonly{chap/chap5}
+%\includeonly{appendix/appa,appendix/appb}
 
 % Filter out all marginpar warnings, since tufte-book produces a ton of them
 \usepackage{silence}
@@ -125,6 +125,10 @@
 % helps indent things in tables
 \newcommand*{\tabindent}{\hspace*{1em}}
 
+% alias for superscript and subscript macros, since we will use them a lot outside math mode
+\let\sups\textsuperscript
+\let\subs\textsubscript
+
 % Look for all graphics in this directory.
 \graphicspath {{figs/}}
 
@@ -155,7 +159,8 @@
 
 
 \appendix
-\include{appa}
-\include{biblio}
+\include{appendix/appa}
+\include{appendix/appb}
+\include{appendix/biblio}
 
 \end{document}

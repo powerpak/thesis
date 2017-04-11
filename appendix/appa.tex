@@ -1,5 +1,5 @@
 % For this appendix, undo tufte-latex's big margin
-\newgeometry{left=1in,right=1in,bottom=1.5in,textwidth=6.5in,marginparsep=0pc,marginparwidth=0pc}
+\newgeometry{left=1in,right=2in,bottom=1.5in,textwidth=6.5in,marginparsep=0pc,marginparwidth=0pc,asymmetric}
 % Recalculate fancy header/footer after geometry change (otherwise page numbers are misplaced)
 \fancyhfoffset[E,O]{0pt}
 
@@ -8,7 +8,7 @@
 \begin{flushleft}
 \small
 
-\begin{longtable}[l]{l P{9cm}}
+\begin{longtable}[c]{l P{9cm}}
     \toprule
     Variable & Description \\
     \midrule
@@ -77,21 +77,30 @@
     problem\textunderscore list:041.84 & Other specified bacterial infections in conditions classified elsewhere and of unspecified site, other anaerobes \\
     problem\textunderscore list:V07.0 & Need for isolation \\
     problem\textunderscore list:V02.3 & Carrier or suspected carrier of other gastrointestinal pathogens \\
-    problem\textunderscore list:787.91 & Diarrhea \\
+    problem\textunderscore list:787.91 & Diarrhea
     \label{tab:excluded_vars}
 \end{longtable}
-\end{flushleft}
 
-\begin{table*}[hp]
-  \fullwidthlabelcaption{tab:chik_antibodies}{Antibodies used for CyTOF analysis}{
-    \small
-    \textbf{Antibodies used for CyTOF analysis in Chapter \ref{chap:chik}}. All antibodies were either purchased directly from Fluidigm or conjugated in-house using X8 conjugation kits. \vspace{1em}
-  }
-  \small
-  \begin{tabular}{l l l l}
+\newpage
+
+\begin{longtable}[c]{l l l l}
     \toprule
     Isotope & Target & Clone & Source \\
     \midrule
+  \endhead
+    \caption[Antibodies used for CyTOF analysis in Chapter \ref{chap:chik}]{
+      \textbf{Antibodies used for CyTOF analysis in Chapter \ref{chap:chik}}. All antibodies were either purchased directly from Fluidigm or conjugated in-house using X8 conjugation kits. 
+    }
+    \\
+    \toprule
+    Isotope & Target & Clone & Source \\
+    \midrule
+  \endfirsthead
+    \midrule
+    \multicolumn{2}{r}{\textit{Continued on next page\ldots}} \\
+  \endfoot
+    \bottomrule
+  \endlastfoot
     113 In & CD57 & HCD57 & Biolegend \\
     115 In & CD45 & HI130 & Biolegend \\
     142 Nd & CD19 & HIB19 & Biolegend \\
@@ -132,10 +141,11 @@
     194Pt & CD45 (acute BC) & HI130 & Biolegend \\
     198Pt  & CD45 (conv BC) & HI130 & Biolegend \\
     103 Rh  & Viability & n/a & Fluidigm \\
-    191/193 Ir & DNA & n/a & Fluidigm \\
-    \bottomrule
-  \end{tabular}
-\end{table*}
+    191/193 Ir & DNA & n/a & Fluidigm
+    \label{tab:chik_antibodies}
+\end{longtable}
+
+\end{flushleft}
 
 % Restore the geometry of tufte-latex's big right margin
 \restoregeometry

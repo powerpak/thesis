@@ -1,0 +1,82 @@
+%% A chapter for my PhD dissertation
+%% First author: Theodore Pak
+%%
+%% Must be included from main.tex.
+
+\chapter{Discussion and Future Directions}
+\label{chap:discussion}
+
+- Such and such major projects were presented in this thesis.
+- Their major findings were... (summarize them for the impatient reader that skipped some chapters)
+
+What are the lessons we learned?
+
+1. It is becoming possible to create *de novo* assemblies to draw conclusions about hospital pathogens, particularly how bugs are evolving and whether patient to patient transmission is occurring.
+
+- This pathway is still fraught with terrors, though, and not quite automatable.
+  - The thought of a machine that can run infection control is probably still fantastical.
+  - Many individual steps have to be well validated to stand firmly on the intelligence gained from NGS data, and although we have done it here for a small number of applications, real world data (and processes) can never be fully anticipated.
+  - Experience in distinguishing fire from false alarm is still valuable. The doctors aren't going by the wayside anytime soon.
+
+- It is worth considering whether *de novo* assembly is even cost-effective, or if mapped MiSeq reads would be ``good enough'' for most use cases.
+  - After all, long read sequencing is still rare and comparatively expensive. It doesn't yet have any well-defined clinical use, and adoption is foreseeably going to continue to lag the short read technologies
+  - What we did notice with *de novo* assembly: you usually see more diversity than you expect (Chap 2), there are certainly regions of the genome that complicate easy phylogenetic analysis like phage regions, plasmids, etc. (Chap 3), and some of those regions certainly have functional relevance to clinical decisions, like antibiotic resistance loci. 
+  - However, in terms of detecting transmission, it's probably overkill compared to MLST + calling variants.
+  - The ``molecular clock'' of SNVs is still better defined than that of recombinatorial events.
+
+- To really use make use of structural variants, we need a lot more well annotated complete genomes.
+  - Particularly from clinical situations. We need to see how fast SNVs and SVs are observed to occur within long-term cases of colonization and infection for each species, as measured by long read sequencing.
+  - This could eventually shift Crook's pronouncements on how many SNVs = transmission, and so on.
+  - We would speculate from what we have so far that mutations likely occur faster than previously reported, simply because our method has the ability to see more variation than method based on alignment to references.
+  - This would be based on the distribution seen in the heatmap viz: bimodal.
+  
+2. Even if we had the best possible in-hospital genomic surveillance, though, what do we do with that intelligence?
+
+- This is the real \$64,000 question, which the Cdiff chapter tried to tackle.
+  - The saying goes that an ounce of prevention is worth a pound of cure, but that's not exactly how hospital budgeting and the incentivizations of the US healthcare system currently operate.
+  - Although there are some financial penalties for ``causing'' infections, as in CMS denying reimbursement for C.diff beyond the 48-72hr window, it's clear from our data that a lot of those cases are not likely coming from patient-to-patient transmission.
+  - If the cost of fancy surveillance far outweighs the number and cost of HAI cases prevented, it's not reasonable to expect it to happen, just like we don't give every patient 10 bonus MRI scans and free cosmetic surgery on request.
+  
+- Even if you could disprove patient to patient transmission, and CMS cared, how can you make use of that info?
+  - Current surveillance doesn't rule out that it's coming from healthcare staff, who aren't getting swabbed at all.
+  - Another culpable source would be the hospital environment. Many studies (and our own experience) shows that Cdiff rates go down after a deep clean of a unit.
+    - To pick nits, that correlation doesn't prove an environmental source--staff might be more conscious about hand hygiene after seeing their unit cleaned. You'd have to do a ``sham clean'' as a negative control. Studies also show that hand hygiene monitors likewise drive down rates of HAIs.
+  - The new pet theories for HAIs (particularly Cdiff) is that they are often caused by microbiome dysregulation from antibiotic overuse, and there is plenty of data to show that too. Although genomic surveillance can demonstrate to some extent whether antibiotic stewardship works (recent Crook Lancet ID paper), unless you surveil the patients' microbiomes (as we are doing for Cdiff, but would be hard to do for every patient and bodily colonization source) you can't prove the patient already colonized with the strain.
+
+- So basically, there's plenty of HAI sources hanging about that genomic surveillance won't resolve. You would need to step up environmental surveillance, and perhaps swab staff and patients at random too, to really attain some confidence that a hospital source can be ruled out after sequencing a given patient isolate and getting no matches.
+  - To use a slightly tortured analogy, it's like we're trying to prove a crime DIDN'T happen by swabbing for DNA and showing that the DNA isn't in any databases. You would only have a reasonable argument if the databases have really complete coverage of all criminals and if you believe that only a previous criminal could have committed the crime. There is obviously no DNA database for ``people that could commit future crimes.''
+
+- HOWEVER. You do get a solid metric that you can track over time; it's not like patient-patient transmissions are useless information, in fact they are probably the loudest klaxon that you could sound for an infection control officer.
+  - This is because they are perhaps the most preventable source of HAIs, and the ones that are understandably most frightening to the hospital (from the ethics, liability, and reputation perspective).
+  - Proven in-hospital outbreaks (like the NICU scenario) are really bad news.
+    - This raises the side question of why a hospital would invest in creating data that proves it's at fault...
+    - ... and the eventual liability implications for creating that data in real time, if it creates an opportunity to respond that goes ignored for whatever reason
+  - But setting that aside. Since an outbreak is the worst egg-on-face outcome that Infection Control needs to prevent, a dashboard like what we made in Pipeline Chapter may not be a crazy idea.
+  - This is obviously in the early phases, and it will take a while for clinicians to ``trust'' this source of data just like they have to vet the deluge of all other information that comes with the job.
+  - But the promise, of having an alarm go off as soon as patient-to-patient transmission occurs, and stopping an outbreak, is very much possible with the software in Pipeline Chapter, and some investment by a hospital in sequencing isolates before throwing them out. (multiplexed MiSeq runs would do it for really low reagent cost and then you just need the staff)
+
+- There may be side benefits too, like surveilling the evolution of resistance in the hospital (WIP). What Crook did for Cdiff and quinolones was only the beginning.
+  - Worth slipping in some plots from that whole side proj?
+  - This is a Future Direction
+
+3. The need to invest in better clinical informatics
+
+The real problem in trying to turn any of that surveillance data into something actionable is that clinicans tend to operate in a vacuum about how much HAIs cost, how much various interventions cost, and what metrics would prove that a given intervention worked or not.
+
+- A lot of these questions could be answered if we had quality, curated data that could answer the questions. In theory, a lot of it is already inside hospital databases. Getting that data together and into any sort of large scale analysis (Cdiff chap) is still a very involved undertaking.
+  - Some of the reasons are historical: most EMRs started as billing systems. Most EMRs were not designed for easy data export. The billing people usually work completely apart from the clinical staff.
+  - Some are legal: HIPAA.
+  - Some are cultural: IT guys don't like clinicians mucking around with mission-critical systems and data. Hospital data visibility is hierarchical and usually on a ``need to know'' basis. Institutional data sharing agreements are usually only as valuable as the political capital that can be expended from the requesting side of a particular transaction.
+
+- So how do we get out of this morass of office politics?
+  - You need to create a single source of truth, and get the entire hospital/health system to invest in it.
+  - If that requires people submitting seemingly conflicting information, and putting layers of access control on top of it to satisfy HIPAA fears, so be it.
+  - The point is to get all the data in one location, dogfood people into using that location rather than their own pet source, and then letting *anybody* run amok with it with minimal advance permission.
+  - Until that happens, hospital administrators can't seriously expect innovation from the ``bottom up'' because all of their employees are only seeing a sliver of the full picture.
+  - But this is getting more into health system design kind of questions, and that's out of scope.
+  
+4. Future technologies that offer a more detailed look into infectious diseases
+
+From a bench researcher's viewpoint, this is perhaps the most exciting part of this thesis.
+
+- 

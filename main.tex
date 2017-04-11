@@ -4,27 +4,29 @@
 % nobib: Don't load natbib with the tufte-book class, since we use biblatex instead.
 \documentclass[justified,nobib]{tufte-book}
 \morefloats
-\usepackage{lgrind}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{moreverb}
-\usepackage{alltt}
-\usepackage{url}
-\usepackage{array}
-\usepackage{pdfpages}
-\usepackage{wrapfig}
-\usepackage{geometry}
-\usepackage{enumitem}
+\usepackage{lgrind}    % syntax highlighting for source code (unused?)
+\usepackage{graphicx}  % adds options to \includegraphics
+\usepackage{booktabs}  % prettier tables
+\usepackage{multirow}  % allow cells to span rows
+\usepackage{moreverb}  % better verbatim environment (unused?)
+\usepackage{alltt}     % alternative verbatim environment (unused?)
+\usepackage{url}       % linking by \url
+\usepackage{array}     % better tabular environment
+\usepackage{pdfpages}  % allows insertion of external PDF files (unused?)
+\usepackage{wrapfig}   % allow text to wrap around figures (unused?)
+\usepackage{geometry}  % change margins, gutter, etc.
+\usepackage{enumitem}  % better list styling, including inline lists
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
-\usepackage{fancyvrb}
-\usepackage{longtable}
+\usepackage{fancyvrb}  % can use verbatim material in footnotes
+\usepackage{longtable} % environment for splitting tables over many pages (see Appendix A)
+\usepackage{seqsplit}  % split NT sequence data (i.e. primers) over multiple lines
+\usepackage{rotating}  % rotate pages and figures into "landscape" mode
 
 %%
 % If you want to only compile a specific chapter, i.e. to speed up compilation while writing, 
 % uncomment and use the following command
 % 
-%\includeonly{appendix/appa,appendix/appb}
+\includeonly{chap/chap4}%,appendix/appa,appendix/appb}
 
 % Filter out all marginpar warnings, since tufte-book produces a ton of them
 \usepackage{silence}
@@ -156,9 +158,11 @@
 \include{chap/chap3}
 \include{chap/chap4}
 \include{chap/chap5}
+\include{chap/chap6}
 
 
 \appendix
+\singlespacing
 \include{appendix/appa}
 \include{appendix/appb}
 \include{appendix/biblio}

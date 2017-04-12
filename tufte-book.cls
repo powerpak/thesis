@@ -15,11 +15,13 @@
 % Notable addition: full-width caption. Intended for use with \begin{figure*}[p].
 % Do NOT set a \label or a \caption if you use this.
 % Simply use \fullwidthlabelcaption{label}{short caption}{long caption}
+\def\isundefined#1{TT\fi\ifx#1\undefined}
 \newsavebox{\@tufte@fullwidthcaption}
 \newcommand{\fullwidthlabelcaption}[3]{%
 \begin{lrbox}{\@tufte@fullwidthcaption}%
   \begin{minipage}[\floatalignment]{0.89\linewidth}\hbox{}%
-    \origcaption[#2]{#3}\origlabel{#1}%
+    \ifthenelse{\isundefined{\origcaption}}{\caption}{\origcaption}[#2]{#3}%
+    \ifthenelse{\isundefined{\origlabel}}{\label}{\origlabel}{#1}%
   \end{minipage}%
 \end{lrbox}%%
 \usebox{\@tufte@fullwidthcaption}

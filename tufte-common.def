@@ -1223,7 +1223,6 @@
 
 %%
 % Define a float environment to place the captions in the margin space
-
 \newenvironment{@tufte@float}[3][htbp]%
   {% begin @tufte@float
     % Should this float be full-width or just text-width?

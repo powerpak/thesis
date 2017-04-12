@@ -26,7 +26,7 @@
 % If you want to only compile a specific chapter, i.e. to speed up compilation while writing, 
 % uncomment and use the following command
 % 
-\includeonly{chap/chap4}%,appendix/appa,appendix/appb}
+%\includeonly{chap/chap4}%,appendix/appa,appendix/appb}
 
 % Filter out all marginpar warnings, since tufte-book produces a ton of them
 \usepackage{silence}
@@ -130,6 +130,19 @@
 % alias for superscript and subscript macros, since we will use them a lot outside math mode
 \let\sups\textsuperscript
 \let\subs\textsubscript
+
+% For all of those sidequotes, which are usually used as epigraphs for the chapters
+\newcommand{\sidequote}[2]{
+  \marginnote{
+    \parindent=0pt\noindent\parskip=0.5em\singlespacing{\em #2}
+    \begin{flushright}\vspace{-1em}—#1\end{flushright}
+  }
+}
+\newcommand{\speaker}[1]{\smallcaps{\upshape #1}}
+
+% For rectifying the tricky tufte-book recto/verso margins with sidewaysfigures, which can't cope
+% Put \sidewaysvspace at the top of sidewaysfigure environments
+\newcommand{\sidewaysvspace}{\checkoddpage\ifoddpage\vspace{2.2in}\else\vspace{-2.2in}\fi}
 
 % Look for all graphics in this directory.
 \graphicspath {{figs/}}

@@ -127,7 +127,6 @@
 %%
 % If there is a `tufte-book-local.sty' file, load it.
 
-% title
 \IfFileExists{tufte-book-local.tex}{%
   \@tufte@info@noline{Loading tufte-book-local.tex}%
   \input{tufte-book-local}%

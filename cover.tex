@@ -59,6 +59,11 @@
 % Restore the geometry of tufte-latex's big right margin
 \restoregeometry
 
+% For the abstract, center the text on the page
+\newgeometry{left=2in,right=2in,bottom=1.5in,textwidth=4.5in,marginparsep=0pc,marginparwidth=0pc}
+% Recalculate fancy header/footer after geometry change to correct page number placement
+\fancyhfoffset[E,O]{0pt}
+
 %% Either \input (*not* \include) your abstract file, or you can put
 %% the text of the abstract directly between the \begin{abstractpage} and
 %% \end{abstractpage} commands.
@@ -69,9 +74,14 @@
 
 \cleardoublepage
 
+% Restore the geometry of tufte-latex's big right margin
+\restoregeometry
+% Restore tufte-latex's fancy header/footer offsets
+\tuftefancyhfoffset
+
 
 \chapter*{Acknowledgments}
-Suspendisse consequat, nisl sed feugiat dignissim, enim mi posuere lacus, ut dictum dolor dolor quis augue. Curabitur porta urna nec felis accumsan, sed commodo massa auctor. Vivamus interdum est ac efficitur malesuada. Quisque odio ligula, finibus at pharetra et, dictum at eros. Aenean a lorem in urna volutpat maximus vestibulum eget augue. Nullam elementum ipsum quis mauris luctus, ac cursus metus aliquam. Curabitur sed odio imperdiet nunc pulvinar venenatis nec vehicula neque. In ac sollicitudin lorem. Vestibulum tempus ante nisi, laoreet accumsan felis dictum vitae.
+\input{ack}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -*-latex-*-

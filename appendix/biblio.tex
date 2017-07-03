@@ -1,3 +1,25 @@
+%% Try to be more flexible about line breaks in links (esp. DOIs) to avoid poor justification
+
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
 %% Prints the bibliography chapter. Note that this uses a biblatex macro, *not* natbib.
 
 \printbibliography[heading=bibintoc]
+
+%% After the bibliography, on the very last page, we add a colophon.
+
+\clearpage
+
+\vspace*{\fill}
+
+\noindent\smallcaps{Colophon}
+
+\vspace{1em}
+
+\noindent{}This document was typset using \XeTeX, starting from a fork of Tiffany Tseng's \texttt{tufte-latex-mit} template,\footnote{\url{https://github.com/ttseng/tufte-latex-mit}} which is itself an amalgamation of components of MIT's \LaTeX{} thesis template\footnote{\url{http://web.mit.edu/thesis/tex/}} and the \texttt{tufte-latex} template.\footnote{\url{https://tufte-latex.github.io/tufte-latex/}} It unabashedly imitates the style of Aaron Turon's immaculately typeset PhD dissertation;\autocite{Turon2013} I hope he can forgive me.
+
+Body text is set in Minion Pro; monospaced text uses \texttt{Bitstream Vera Sans Mono}. {\fontfamily{lmr}\selectfont{}Latin Modern} is used for the pittance of math herein. {\chapterNumberNormalSize\textbf{Cochin}} is used for chapter numbers, while {\chapterTitle\itshape Palatino} stealthily supersedes Minion Pro for chapter titles.
+
+Source code for the typesetting of this thesis is available online.\footnote{\url{https://github.com/powerpak/thesis}} I hereby disclaim any responsibility for the amount of procrastination said code enables in the course of writing your own dissertation.

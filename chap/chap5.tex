@@ -33,7 +33,7 @@ The goal of this study was to generate a robust estimate of local cost associate
 
 \begin{figure}[htb]
   \includegraphics[width=\textwidth]{chap5/1a_methods_db_schema}               
-  \caption[Data sources for this study]{\textbf{Data sources for this study}. Entity-relationship diagram for all electronic medical record data used to generate models of \emph{Clostridium difficile} infection propensity, using Information Engineering notation; see \textcite{Halpin2010}. Boxes represent tables of entities with any directly associated attributes (fields) listed below; single lines represent relationships, with arrowheads indicating the cardinality of each side of the relationship; crow’s foot arrowhead with circle represents “zero or more;” crow’s foot arrowhead with cross-stroke represents “one or more;” cross-stroke arrowhead represents “exactly one.” Blue numbers indicate the number of variables extracted from each associated table for each visit. ICD-9, International Classification of Diseases Ninth Revision; EIA, enzyme immunoassay; PCR, polymerase chain reaction.}
+  \caption[Data sources for study of \emph{C. difficile} infection costs]{\textbf{Data sources for this study}. Entity-relationship diagram for all electronic medical record data used to generate models of \emph{Clostridium difficile} infection propensity, using Information Engineering notation; see \textcite{Halpin2010}. Boxes represent tables of entities with any directly associated attributes (fields) listed below; single lines represent relationships, with arrowheads indicating the cardinality of each side of the relationship; crow’s foot arrowhead with circle represents “zero or more;” crow’s foot arrowhead with cross-stroke represents “one or more;” cross-stroke arrowhead represents “exactly one.” Blue numbers indicate the number of variables extracted from each associated table for each visit. ICD-9, International Classification of Diseases Ninth Revision; EIA, enzyme immunoassay; PCR, polymerase chain reaction.}
   \label{fig:db_schema}
 \end{figure}
 
@@ -107,7 +107,9 @@ Regularized logistic regression models predicting the risk of CDI acquisition we
 
 \begin{table*}[ht]
   \input{chap/tables/cdi-pts}
-  \caption[Demographic characteristics of the study population and matched cohorts]{\textbf{Demographic characteristics of the study population and matched cohorts.} Abbreviation: CDI, Clostridium difficile infection; ICD-9, International Classification of Diseases Ninth Revision; EIA, enzyme immunoassay; PCR, polymerase chain reaction; SMD, standardized mean difference. $^a$Separate columns are unnecessary because 1:1 exact matching was performed on the characteristics shown, and therefore all values are identical. $^b$SMD is shown for age treated as a continuous variable; coarsened exact matching was performed using the listed age ranges.
+  \caption[Demographic characteristics of the study population and matched cohorts]{\textbf{Demographic characteristics of the study population and matched cohorts.} Abbreviation: CDI, Clostridium difficile infection; ICD-9, International Classification of Diseases Ninth Revision; EIA, enzyme immunoassay; PCR, polymerase chain reaction; SMD, standardized mean difference.
+  \captionfootnotetext{a}{Separate columns are unnecessary because 1:1 exact matching was performed on the characteristics shown, and therefore all values are identical.}
+  \captionfootnotetext{b}{SMD is shown for age treated as a continuous variable; coarsened exact matching was performed using the listed age ranges.}
 }
   \label{tab:cdi_pts}
 \end{table*}

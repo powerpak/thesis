@@ -758,45 +758,6 @@ Severity score}</string>
 			<string>LineGraphic</string>
 			<key>ControlPoints</key>
 			<array>
-				<string>{33.5, 0}</string>
-				<string>{-24.000003099441528, -1.5000003650784492}</string>
-			</array>
-			<key>Head</key>
-			<dict>
-				<key>ID</key>
-				<integer>36</integer>
-				<key>Position</key>
-				<real>0.30812326073646545</real>
-			</dict>
-			<key>ID</key>
-			<integer>45</integer>
-			<key>Points</key>
-			<array>
-				<string>{382, 201.5}</string>
-				<string>{454.00000204145908, 227.50000036507845}</string>
-			</array>
-			<key>Style</key>
-			<dict>
-				<key>stroke</key>
-				<dict>
-					<key>Bezier</key>
-					<true/>
-					<key>HeadArrow</key>
-					<string>0</string>
-					<key>Legacy</key>
-					<true/>
-					<key>LineType</key>
-					<integer>1</integer>
-					<key>TailArrow</key>
-					<string>0</string>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>Class</key>
-			<string>LineGraphic</string>
-			<key>ControlPoints</key>
-			<array>
 				<string>{0.5, -16}</string>
 				<string>{-26.000003039836884, 0.99999963492155075}</string>
 			</array>
@@ -1035,8 +996,8 @@ Coexpression modules}</string>
 			<integer>37</integer>
 			<key>Points</key>
 			<array>
-				<string>{346, 186.75000036507845}</string>
-				<string>{400, 186.75000036507845}</string>
+				<string>{346.25, 186.75000036507845}</string>
+				<string>{400.25, 186.75000036507845}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1238,7 +1199,7 @@ Coexpression modules}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{292.5, 181}, {86, 28}}</string>
+			<string>{{291, 179.75}, {49, 28}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -1281,7 +1242,7 @@ Coexpression modules}</string>
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f0\fs24 \cf0 RNA-seq\
-CHIKV viral titer}</string>
+}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1290,7 +1251,7 @@ CHIKV viral titer}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{292.5, 221}, {99, 14}}</string>
+			<string>{{292.5, 215}, {99, 28}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -1330,7 +1291,9 @@ CHIKV viral titer}</string>
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 Cytokines, 50-plex}</string>
+\f0\fs24 \cf0 Cytokines, 41-plex\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 CHIKV viral titer}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1515,7 +1478,7 @@ CHIKV viral titer}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{212.5, 211.5}, {36, 14}}</string>
+			<string>{{210, 211.5}, {41, 14}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -1555,7 +1518,7 @@ CHIKV viral titer}</string>
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs24 \cf0 Serum}</string>
+\f0\fs24 \cf0 Plasma}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
 			</dict>
@@ -1564,7 +1527,7 @@ CHIKV viral titer}</string>
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{197, 178.5}, {67, 14}}</string>
+			<string>{{197, 171.5}, {67, 14}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -1618,8 +1581,8 @@ CHIKV viral titer}</string>
 			<integer>20</integer>
 			<key>Points</key>
 			<array>
-				<string>{182.88489207625389, 192.87429336536843}</string>
-				<string>{288, 193.99999964237213}</string>
+				<string>{182.92656721174717, 187.01369945649367}</string>
+				<string>{288, 186.99999964237213}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -1638,7 +1601,7 @@ CHIKV viral titer}</string>
 				<key>ID</key>
 				<integer>19</integer>
 				<key>Position</key>
-				<real>0.23021583259105682</real>
+				<real>0.14686557650566101</real>
 			</dict>
 		</dict>
 		<dict>
@@ -2260,7 +2223,7 @@ CHIKV viral titer}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-04-09 21:29:30 +0000</string>
+	<string>2017-04-24 20:09:12 +0000</string>
 	<key>Modifier</key>
 	<string>Ted Pak</string>
 	<key>NotesVisible</key>
@@ -2346,7 +2309,7 @@ CHIKV viral titer}</string>
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{806, 133}, {1537, 948}}</string>
+		<string>{{517, 382}, {1537, 948}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>

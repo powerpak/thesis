@@ -42,16 +42,18 @@
 \ifxetex
   \RequirePackage{fontspec}
   \newfontfamily\chapterNumber[Scale=6]{Cochin}
+  \newfontfamily\chapterNumberNormalSize{Cochin}
   \newfontfamily\chapterTitle{Palatino}
 \else
   \newfont{\chapterNumber}{pplr9d scaled 7000}
-  \newfont{\chapterNumber}{pplr9d}
+  \newfont{\chapterNumberNormalSize}{pplr9d}
+  \newfont{\chapterTitle}{pplr9d}
 \fi
 \definecolor{darkishgray}{gray}{0.40}
 \titleformat{\chapter}
     [display]%shape
     {\relax\begin{singlespace}\begin{fullwidth}}%format applied to label+text
-    {{\chapterNumber\textbf{\thechapter}} \vspace{-0.5cm}}%label
+    {\vspace{-0.5cm} {\chapterNumber\textbf{\thechapter}} }%label
     {0pt}%sep
     {\chapterTitle\huge\itshape\vspace*{.9em}\raggedright\color{darkishgray}}%before
     [\normalsize\vspace{1em}\titlerule\end{fullwidth}\end{singlespace}\vspace{-1em}]%after
@@ -176,6 +178,9 @@
 % Usage: \committeemember{names}
 \def\committeemembers#1{\gdef\@committeemembers{#1}}
 
+% Useage: \signedsignaturepage{filename.pdf}
+\def\signedsignaturepage#1{\gdef\@signedsignaturepage{#1}}
+
 %% `upcase' documentclass option: \choosecase is defined either as a dummy or
 %% a macro to change the (expanded) argument to uppercase.
 \newcommand{\choosecase}[1]{#1}
@@ -236,30 +241,36 @@
   \pagebreak
 }
 
+\usepackage{pdfpages}  % used to insert pages from another PDF
 \def\signaturepage{
-  \pagebreak
-  \hspace{0pt}
-  \vfill
-  \noindent
-  This manuscript has been read and accepted by the Graduate Faculty of the \@department, 
-  in satisfaction of the dissertation requirement for the degree of \@degree.
-  \vskip 3\baselineskip
-  \signature{Dissertation Advisor \textemdash\ \@supervisor}{Date}
-  \par
-  \vskip 3\baselineskip
-  \signature{Dean \textemdash\ \@deanname}{Date}
-  \par
-  \begin{center}
-  \vspace{1\baselineskip}
-  \smallcaps{Dissertation committee} \\
-  \@committeemembers
-  \par
-  \vspace{2\baselineskip}
-  \smallcaps{\@school} \\
-  \oldstylenumbers{\@degreeyear}
-  \end{center}
-  \vfill
-  \hspace{0pt}
+  \ifx \@signedsignaturepage \undefined
+    \par
+    \pagebreak
+    \hspace{0pt}
+    \vfill
+    \noindent
+    This manuscript has been read and accepted by the Graduate Faculty of the \@department, 
+    in satisfaction of the dissertation requirement for the degree of \@degree.
+    \vskip 3\baselineskip
+    \signature{Dissertation Advisor \textemdash\ \@supervisor}{Date}
+    \par
+    \vskip 3\baselineskip
+    \signature{Dean \textemdash\ \@deanname}{Date}
+    \par
+    \begin{center}
+    \vspace{1\baselineskip}
+    \smallcaps{Dissertation committee} \\
+    \@committeemembers
+    \par
+    \vspace{2\baselineskip}
+    \smallcaps{\@school} \\
+    \oldstylenumbers{\@degreeyear}
+    \end{center}
+    \vfill
+    \hspace{0pt}
+  \else
+    \includepdf[pages={1},noautoscale,width=1.15\textwidth,offset=0.5cm 0]{\@signedsignaturepage}
+  \fi
 }
 
 % abstract

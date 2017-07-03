@@ -27,7 +27,7 @@
 % If you want to only compile a specific chapter, i.e. to speed up compilation while writing, 
 % uncomment and use the following command
 % 
-%\includeonly{chap/chap7}%,appendix/appa,appendix/appb}
+%\includeonly{chap/chap7,appendix/appa,appendix/appb}
 
 % Filter out all marginpar warnings, since tufte-book produces a ton of them
 \usepackage{silence}
@@ -47,7 +47,9 @@
   citereset=chapter,
   backend=bibtex,
   isbn=false,
-  url=false
+  url=false,
+  eprint=false,
+  doi=true
 ]{biblatex}
 \addbibresource{/Users/powerpak/share/library.bib}
 % Add a command to do a sidenote citation but with an adjustable Y offset.
@@ -140,6 +142,11 @@
   }
 }
 \newcommand{\speaker}[1]{\smallcaps{\upshape #1}}
+
+% For footnote text in table captions
+\newcommand{\captionfootnotetext}[2]{
+  \par\setlength{\parskip}{0.4em}\hangindent=1em\noindent$^#1$ #2
+}
 
 % For rectifying the tricky tufte-book recto/verso margins with sidewaysfigures, which can't cope
 % Put \sidewaysvspace at the top of sidewaysfigure environments

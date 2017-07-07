@@ -5,8 +5,12 @@
 \setcounter{biburllcpenalty}{100}
 
 %% Prints the bibliography chapter. Note that this uses a biblatex macro, *not* natbib.
+%% sloppypar allows more interword spacing to prevent overfull hboxes, since linebreaking citations
+%% is much harder than normal text
 
+\begin{sloppypar}
 \printbibliography[heading=bibintoc]
+\end{sloppypar}
 
 %% After the bibliography, on the very last page, we add a colophon.
 
@@ -18,7 +22,7 @@
 
 \vspace{1em}
 
-\noindent{}This document was typset using \XeTeX, starting from a fork of Tiffany Tseng's \texttt{tufte-latex-mit} template,\footnote{\url{https://github.com/ttseng/tufte-latex-mit}} which is itself an amalgamation of components of MIT's \LaTeX{} thesis template\footnote{\url{http://web.mit.edu/thesis/tex/}} and the \texttt{tufte-latex} template.\footnote{\url{https://tufte-latex.github.io/tufte-latex/}} It unabashedly imitates the style of Aaron Turon's immaculately typeset PhD dissertation;\autocite{Turon2013} I hope he can forgive me.
+\noindent{}This document was typset using \XeTeX, starting from a fork of Tiffany Tseng's \texttt{tufte-latex-mit} template,\footnote{\url{https://github.com/ttseng/tufte-latex-mit}} which is itself an amalgamation of components of MIT's \LaTeX{} thesis template\footnote{\url{http://web.mit.edu/thesis/tex/}} and the \texttt{tufte-latex} template.\footnote{\url{https://tufte-latex.github.io/tufte-latex/}} It unabashedly imitates the style of Aaron Turon's immaculately typeset PhD dissertation;\autocite{Turon2013} I hope he can forgive me for emulating an impressively optimal solution.
 
 Body text is set in Minion Pro; monospaced text uses \texttt{Bitstream Vera Sans Mono}. {\fontfamily{lmr}\selectfont{}Latin Modern} is used for the pittance of math herein. {\chapterNumberNormalSize\textbf{Cochin}} is used for chapter numbers, while {\chapterTitle\itshape Palatino} stealthily supersedes Minion Pro for chapter titles.
 

@@ -4,7 +4,6 @@
 % nobib: Don't load natbib with the tufte-book class, since we use biblatex instead.
 \documentclass[justified,nobib]{tufte-book}
 \morefloats
-\usepackage{lgrind}    % syntax highlighting for source code (unused?)
 \usepackage{graphicx}  % adds options to \includegraphics
 \usepackage{booktabs}  % prettier tables
 \usepackage{multirow}  % allow cells to span rows
@@ -16,6 +15,7 @@
 \usepackage{wrapfig}   % allow text to wrap around figures (unused?)
 \usepackage{geometry}  % change margins, gutter, etc.
 \usepackage{enumitem}  % better list styling, including inline lists
+\usepackage{hyphenat}  % more control over hyphenation special cases
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \usepackage{fancyvrb}  % can use verbatim material in footnotes
 \usepackage{longtable} % environment for splitting tables over many pages (see Appendix A)
@@ -29,7 +29,12 @@
 % 
 %\includeonly{chap/chap7,appendix/appa,appendix/appb}
 
-% Filter out all marginpar warnings, since tufte-book produces a ton of them
+%% This can mark overfull hboxes so they can be spotted and corrected - useful while drafting
+%\overfullrule=10pt
+%% Helps heal overfull hboxes document-wide (at the cost of some overly wide interword spaces)
+\def\esfix{1em}
+\emergencystretch=\esfix
+%% Filter out all marginpar warnings, since tufte-book produces a ton of them
 \usepackage{silence}
 \WarningFilter*{latex}{Marginpar on page \thepage\space moved}
 
@@ -40,8 +45,11 @@
 % - http://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
 \usepackage[
   firstinits=true,
+  terseinits=true,
   citestyle=authortitle-ibid,
   bibstyle=authoryear,
+  minbibnames=3,
+  maxbibnames=5,
   autocite=footnote,
   citetracker=true,
   citereset=chapter,
@@ -51,7 +59,7 @@
   eprint=false,
   doi=true
 ]{biblatex}
-\addbibresource{/Users/powerpak/share/library.bib}
+\addbibresource{library.bib}
 % Add a command to do a sidenote citation but with an adjustable Y offset.
 \newcommand{\sidecite}[2][]{\ifthenelse{\equal{#1}{}}{\autocite{#2}}{\sidenote[][#1]{\cite{#2}}}}
 
@@ -59,6 +67,10 @@
 \renewbibmacro{in:}{}
 % Display all names (not just the first) in last-first order
 \DeclareNameAlias{sortname}{last-first}
+% Don't use comma between last and first names, since we are using terseinits (Pak TR) style
+\renewcommand*{\revsdnamepunct}{}
+% Never list editors for journal articles
+\AtEveryBibitem{\ifentrytype{article}{\clearname{editor}}{}}
 
 \usepackage{xpatch}
 % Patch the citation formatting macros for authortitle-ibid to include a year.

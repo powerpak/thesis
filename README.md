@@ -1,6 +1,10 @@
 # My PhD thesis
 
-This is the complete source, including figures, for my PhD thesis, deposited at the [Icahn School of Medicine at Mount Sinai](http://icahn.mssm.edu) on July 5, 2017. The code is forked from [\@scientiffic](https://twitter.com/scientiffic)'s [tufte-latex-mit template](https://github.com/ttseng/tufte-latex-mit), which is itself an amalgamation of components of the [MIT's LaTeX thesis template](http://web.mit.edu/thesis/tex/) and the [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) template.  
+This is the complete source, including figures, for my PhD thesis, deposited at the [Icahn School of Medicine at Mount Sinai](http://icahn.mssm.edu) on July 5, 2017. The code is forked from [\@scientiffic](https://twitter.com/scientiffic)'s [tufte-latex-mit template](https://github.com/ttseng/tufte-latex-mit), which is itself an amalgamation of components of the [MIT's LaTeX thesis template](http://web.mit.edu/thesis/tex/) and the [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) template.
+
+## Reading
+
+The typeset PDF is included in the repository and can be [downloaded by itself](https://github.com/powerpak/thesis/raw/master/main.pdf).
 
 ## Compiling
 

@@ -27,6 +27,8 @@ Chapter 5: **Pak TR**, Chacko KI, O’Donnell T, Huprikar S, van Bakel H, Kasars
 
 Chapter 6: Michlmayr D,\* **Pak TR**,\* Rahman A, Amir ED, Kim E-Y, Kim-Schulze S, Suprun M, Stewart MG, Thomas G, Balmaseda A, Wang L, Zhu J, Suarez-Farinas M, Wolinsky SM, Kasarskis A, Harris E. "Comprehensive innate immune profiling of chikungunya virus infection in pediatric cases." _Mol Syst Biol._ 2018 Aug; 14(8): e7862. doi:[10.15252/msb.20177862](https://doi.org/10.15252/msb.20177862).
 
+_\* denotes equal authorship._
+
 ## Compiling
 
 I compiled this with [MacTeX 2014](ftp://tug.org/historic/systems/mactex/2014/) using the wrappers for `latexmk` in the LaTeX bundle for TextMate 2.0. The main (and only) file that you should compile is `main.tex`, and to support all features used, you need to use [XeTeX](https://en.wikipedia.org/wiki/XeTeX), not `pdflatex`.

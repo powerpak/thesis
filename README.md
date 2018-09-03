@@ -6,6 +6,21 @@ This is the complete source, including figures, for my PhD thesis, deposited at 
 
 The typeset PDF is included in the repository and can be [downloaded by itself](https://github.com/powerpak/thesis/raw/master/main.pdf).
 
+## Publications
+
+Four chapters of this thesis were published, after reformatting and revisions, as individual peer-reviewed articles. Citations for those publications are as follows:
+
+Chapter 1: **Pak TR**, Kasarskis A. "How next-generation sequencing and multiscale data analysis will transform infectious disease management."
+_Clin Infect Dis._ 2015 Aug 6. pii: civ670.  doi:[10.1093/cid/civ670](https://doi.org/10.1093/cid/civ670).
+
+Chapter 2: **Pak TR**, Altman DR, Attie O, Sebra R, Hamula CL, Lewis M, Deikus G, Newman LC, Fang G, Hand J, Patel G, Wallach F, Schadt EE,
+Huprikar S, van Bakel H, Kasarskis A, Bashir A. "Whole-genome sequencing identifies emergence of a quinolone resistance mutation in a
+case of Stenotrophomonas maltophilia bacteremia." _Antimicrob Agents Chemother._ 2015 Aug 31. pii: AAC.01723-15. doi:[10.1128/AAC.01723-15](https://doi.org/10.1128/AAC.01723-15).
+
+Chapter 5: **Pak TR**, Chacko KI, O’Donnell T, Huprikar S, van Bakel H, Kasarskis A, Scott ER. "Estimating local costs associated with _Clostridium difficile_ infection using machine learning and electronic medical records." _Infect Control Hosp Epidemiol._ 2017 Dec;38(12):1478-1486. doi:[10.1017/ice.2017.214](https://doi.org/10.1017/ice.2017.214).
+
+Chapter 6: Michlmayr D,\* **Pak TR**,\* Rahman A, Amir ED, Kim E-Y, Kim-Schulze S, Suprun M, Stewart MG, Thomas G, Balmaseda A, Wang L, Zhu J, Suarez-Farinas M, Wolinsky SM, Kasarskis A, Harris E. "Comprehensive innate immune profiling of chikungunya virus infection in pediatric cases." _Mol Syst Biol._ 2018 Aug; 14(8): e7862. doi:[10.15252/msb.20177862](https://doi.org/10.15252/msb.20177862).
+
 ## Compiling
 
 I compiled this with [MacTeX 2014](ftp://tug.org/historic/systems/mactex/2014/) using the wrappers for `latexmk` in the LaTeX bundle for TextMate 2.0. The main (and only) file that you should compile is `main.tex`, and to support all features used, you need to use [XeTeX](https://en.wikipedia.org/wiki/XeTeX), not `pdflatex`.

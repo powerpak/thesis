@@ -1,6 +1,12 @@
 # My PhD thesis
 
-This is the complete source, including figures, for my PhD thesis, deposited at the [Icahn School of Medicine at Mount Sinai](http://icahn.mssm.edu) on July 5, 2017. The code is forked from [\@scientiffic](https://twitter.com/scientiffic)'s [tufte-latex-mit template](https://github.com/ttseng/tufte-latex-mit), which is itself an amalgamation of components of the [MIT's LaTeX thesis template](http://web.mit.edu/thesis/tex/) and the [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) template.
+This is the complete source, including figures, for my PhD thesis, deposited at the [Icahn School of Medicine at Mount Sinai](http://icahn.mssm.edu) on July 5, 2017. The title of the thesis is:
+
+**"Multiscale analysis of infectious diseases: integrating omics and clinical informatics data into patient care."**
+
+My thesis advisor was [Andrew Kasarskis, PhD](https://icahn.mssm.edu/profiles/andrew-kasarskis).
+
+The LaTeX code for typesetting was forked from [\@scientiffic](https://twitter.com/scientiffic)'s [tufte-latex-mit template](https://github.com/ttseng/tufte-latex-mit), which is itself an amalgamation of components of the [MIT's LaTeX thesis template](http://web.mit.edu/thesis/tex/) and the [Tufte-LaTeX](https://tufte-latex.github.io/tufte-latex/) template.
 
 ## Reading
 

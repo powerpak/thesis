@@ -10,9 +10,9 @@ The LaTeX code for typesetting was forked from [\@scientiffic](https://twitter.c
 
 ## Reading
 
-You can [view and download the typeset PDF](https://drive.google.com/file/d/1Rz19CdlJqs5OAtP2ZpJSiM28UfBmazF3/view).
+You can [view and download the complete PDF](https://drive.google.com/file/d/1Rz19CdlJqs5OAtP2ZpJSiM28UfBmazF3/view).
 
-I also wrote a short blog post about this thesis [on my website](https://tedpak.com/2018/09/03/phd-thesis-is-online.html).
+I also wrote a short [blog post](https://tedpak.com/2018/09/03/phd-thesis-is-online.html) about my thesis.
 
 The typeset PDF is also included in the repository as `main.pdf`.
 

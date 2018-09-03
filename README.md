@@ -10,7 +10,11 @@ The LaTeX code for typesetting was forked from [\@scientiffic](https://twitter.c
 
 ## Reading
 
-The typeset PDF is included in the repository and can be [downloaded by itself](https://github.com/powerpak/thesis/raw/master/main.pdf).
+You can [view and download the typeset PDF](https://drive.google.com/file/d/1Rz19CdlJqs5OAtP2ZpJSiM28UfBmazF3/view).
+
+I also wrote a short blog post about this thesis [on my website](https://tedpak.com/2018/09/03/phd-thesis-is-online.html).
+
+The typeset PDF is also included in the repository as `main.pdf`.
 
 ## Publications
 
